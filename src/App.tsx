@@ -208,7 +208,7 @@ export default function App() {
         
         {/* Decorative Floral - Top Right */}
         <motion.img 
-          src="/input_file_1.png" 
+          src="/KETUPAT.png" 
           alt=""
           style={{ y: yFloralTop, willChange: "transform, opacity" }}
           className="absolute -top-20 -right-20 w-[300px] md:w-[600px] opacity-20 md:opacity-30 blur-[2px] md:blur-none"
@@ -230,7 +230,7 @@ export default function App() {
 
         {/* Decorative Floral - Bottom Left */}
         <motion.img 
-          src="/RAYA-PERFECT-WEEK-LOGO.png" 
+          src="/KETUPAT.png" 
           alt=""
           style={{ y: yFloralBottom, willChange: "transform, opacity" }}
           className="absolute -bottom-20 -left-20 w-[300px] md:w-[600px] opacity-20 md:opacity-30 blur-[2px] md:blur-none"
@@ -252,7 +252,7 @@ export default function App() {
 
         {/* Hanging Decorations - Top Right */}
         <motion.img 
-          src="/input_file_3.png" 
+          src="/LAMPU.png" 
           alt=""
           style={{ y: yHanging, willChange: "transform" }}
           className="absolute top-0 right-0 w-64 md:w-[500px] z-20 origin-top"
@@ -272,7 +272,7 @@ export default function App() {
 
         {/* Floating Ketupats for Depth */}
         <motion.img 
-          src="/input_file_2.png" 
+          src="/KETUPAT.png" 
           alt=""
           style={{ y: yKetupat1, willChange: "transform" }}
           className="absolute top-[15%] left-[5%] w-20 md:w-32 z-10 opacity-60"
@@ -285,7 +285,7 @@ export default function App() {
         />
 
         <motion.img 
-          src="/input_file_2.png" 
+          src="/RAYA-PERFECT-WEEK-LOGO.png" 
           alt=""
           style={{ y: yKetupat2, willChange: "transform" }}
           className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-40 hidden md:block"
@@ -335,7 +335,7 @@ export default function App() {
         >
           <div className="relative mb-8 md:mb-12">
           <motion.img 
-            src="/input_file_4.png" 
+            src="/RAYA-PERFECT-WEEK-LOGO.png" 
             alt="Raya Perfect Week"
             className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]"
             style={{ willChange: "transform, opacity, filter" }}
