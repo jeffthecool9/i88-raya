@@ -195,6 +195,52 @@ const PaymentRiver = () => {
     </div>
   );
 };
+
+const PaymentRiver = () => {
+
+  const logos = [
+    "/maybank.jpg",
+    "/cimb.png",
+    "/publicbank.png",
+    "/duitnow.png",
+    "/fpx.jpg",
+  ];
+
+  const loop = [...logos, ...logos];
+
+  return (
+    <div className="relative overflow-hidden py-6">
+      
+      {/* fade edges */}
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a200a] to-transparent z-10"/>
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a200a] to-transparent z-10"/>
+
+      <motion.div
+        className="flex items-center gap-14 w-max"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 20,
+          ease: "linear",
+          repeat: Infinity
+        }}
+      >
+        {loop.map((logo, i) => (
+          <div
+            key={i}
+            className="flex items-center justify-center h-14 md:h-16 opacity-80 hover:opacity-100 transition"
+          >
+            <img
+              src={logo}
+              alt="payment"
+              className="h-full w-auto object-contain"
+            />
+          </div>
+        ))}
+      </motion.div>
+
+    </div>
+  );
+};
 export default function App() {
   const { scrollYProgress } = useScroll();
 
