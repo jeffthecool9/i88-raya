@@ -438,10 +438,10 @@ export default function App() {
       {/* 2. REWARDS CALENDAR */}
       <Section id="rewards" className="bg-gradient-to-b from-transparent to-raya-emerald/10">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 gold-gradient-text uppercase tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-black mb-3 gold-gradient-text uppercase tracking-tight">
             Your Reward Journey
           </h2>
-          <p className="text-white/60 text-sm">Complete the streak to unlock maximum rewards.</p>
+         <p className="text-white/70 text-base font-medium">Complete the streak to unlock maximum rewards.</p>
         </div>
 
         <div className="relative py-8 md:py-12 px-2 md:px-4">
@@ -505,23 +505,29 @@ export default function App() {
                     )}
                   </div>
 
-                  <div className="mt-4 md:mt-6 text-center">
-                    <span className="block text-[9px] md:text-[11px] font-bold text-raya-gold mb-1 md:mb-1.5 opacity-80">
-                      {reward.date}
-                    </span>
-                    <div className="flex flex-col items-center gap-0.5 md:gap-1">
-                      <span
-                        className={`text-[10px] md:text-[12px] font-black uppercase tracking-tight leading-tight ${
-                          reward.highlight ? 'text-white' : 'text-white/80'
-                        }`}
-                      >
-                        {reward.bonus}
-                      </span>
-                      <span className="text-[8px] md:text-[10px] text-white/45 font-medium italic">
-                        {reward.spins}
-                      </span>
-                    </div>
-                  </div>
+                 <div className="mt-5 md:mt-7 text-center space-y-1">
+  
+  <span className="block text-xs md:text-sm font-bold text-raya-gold tracking-wide">
+    {reward.date}
+  </span>
+
+  <div className="flex flex-col items-center gap-1">
+
+    <span
+      className={`text-sm md:text-lg font-black uppercase tracking-wide leading-tight ${
+        reward.highlight ? 'text-white' : 'text-white/80'
+      }`}
+    >
+      {reward.bonus}
+    </span>
+
+    <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">
+      {reward.spins}
+    </span>
+
+  </div>
+
+</div>
                 </motion.div>
               ))}
             </div>
