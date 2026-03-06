@@ -583,9 +583,21 @@ export default function App() {
                 </motion.div>
 
                 <div>
-                  <h3 className="text-xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-raya-gold transition-colors duration-300">
-                    {item.title}
-                  </h3>
+                 <motion.h3
+  animate={{
+    y: [0, -3, 0],
+    scale: [1, 1.015, 1],
+  }}
+  transition={{
+    duration: 2.4,
+    repeat: Infinity,
+    ease: "easeInOut",
+    delay: idx * 0.25,
+  }}
+  className="text-xl md:text-2xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-raya-gold transition-colors duration-300"
+>
+  {item.title}
+</motion.h3>
                   <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                     {item.desc}
                   </p>
