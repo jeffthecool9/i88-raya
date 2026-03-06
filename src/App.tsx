@@ -631,7 +631,7 @@ export default function App() {
               className="group relative bg-raya-gold text-raya-blue text-lg font-black px-8 py-4 rounded-xl overflow-hidden shadow-2xl hover:scale-105 active:scale-95 transition-transform glow-shadow"
             >
               <span className="relative z-10 flex items-center gap-2">
-                JOIN NOW <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Pre-Register <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <motion.div
                 className="absolute inset-0 bg-white/20"
