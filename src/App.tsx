@@ -7,10 +7,6 @@ import {
   CheckCircle2,
   AlertCircle,
   Moon,
-  Zap,
-  Wallet,
-  Star,
-  Crown,
 } from 'lucide-react';
 
 // --- Constants ---
@@ -27,38 +23,9 @@ const DAILY_REWARDS = [
  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', spins: 'Final Reward', highlight: true },
 ];
 
-const CREDIT_TIERS = [
-  { deposit: '$700', credit: '$88' },
-  { deposit: '$2,000', credit: '$238' },
-  { deposit: '$5,000', credit: '$588' },
-];
 
-const STREAK_BONUSES = [
-  {
-    deposit: 'RM700',
-    reward: 'RM88 Extra',
-    label: 'Total Deposit Reward',
-    icon: Wallet,
-    color: 'text-orange-400',
-    progress: 33,
-  },
-  {
-    deposit: 'RM2,000',
-    reward: 'RM238 Extra',
-    label: 'Total Deposit Reward',
-    icon: Star,
-    color: 'text-slate-300',
-    progress: 66,
-  },
-  {
-    deposit: 'RM5,000',
-    reward: 'RM588 Extra',
-    label: 'Total Deposit Reward',
-    icon: Crown,
-    color: 'text-raya-gold',
-    progress: 100,
-  },
-];
+
+
 
 // --- Components ---
 
@@ -637,58 +604,33 @@ export default function App() {
       </Section>
 
     
-
-                {/* 3. TIERS & RULES */}
+      {/* 3. QUICK RULES ONLY */}
       <Section id="tiers-rules" className="bg-raya-emerald/5">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass-panel p-5 border-raya-gold/20 bg-white/[0.04] backdrop-blur-xl">
-            <h3 className="text-lg font-bold mb-4 gold-gradient-text uppercase">Free Credit Tiers</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-2">
-              {CREDIT_TIERS.map((tier) => (
-                <div
-                  key={tier.deposit}
-                  className="p-3 sm:p-2 rounded-lg bg-white/5 border border-white/10 text-center flex sm:flex-col items-center sm:justify-center justify-between gap-2"
-                >
-                  <div className="flex flex-col items-start sm:items-center">
-                    <span className="text-[8px] text-white/40 uppercase font-bold block mb-0.5">
-                      Deposit
-                    </span>
-                    <div className="text-xs font-black">{tier.deposit}</div>
-                  </div>
+        <div className="max-w-3xl mx-auto">
+          <div className="glass-panel p-6 md:p-8 bg-white/[0.05] border-raya-emerald/20 backdrop-blur-xl rounded-[2rem]">
+            <h3 className="text-xl md:text-2xl font-bold mb-6 gold-gradient-text uppercase text-center">
+              Quick Rules
+            </h3>
 
-                  <div className="hidden sm:block h-px w-full bg-white/10 my-1" />
-
-                  <div className="flex flex-col items-end sm:items-center">
-                    <span className="text-[8px] text-white/40 uppercase font-bold block mb-0.5 sm:hidden">
-                      Credit
-                    </span>
-                    <div className="text-sm font-black text-raya-gold">{tier.credit}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="glass-panel p-5 bg-white/[0.05] border-raya-emerald/20 backdrop-blur-xl">
-            <h3 className="text-lg font-bold mb-4 gold-gradient-text uppercase">Quick Rules</h3>
-            <ul className="space-y-2 text-[11px] text-white/80">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-raya-gold shrink-0 mt-0.5" />
+            <ul className="space-y-4 text-sm md:text-[15px] text-white/85">
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
                 <span>Deposit daily for 7 days to unlock Grand Credit.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <AlertCircle className="w-3.5 h-3.5 text-raya-gold shrink-0 mt-0.5" />
+
+              <li className="flex items-start gap-3">
+                <AlertCircle className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
                 <span>8x turnover applies to all bonuses.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <Clock className="w-3.5 h-3.5 text-raya-gold shrink-0 mt-0.5" />
+
+              <li className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
                 <span>Free Credit credited on 26 March.</span>
               </li>
             </ul>
           </div>
         </div>
       </Section>
-
       {/* 4. HOW TO PARTICIPATE */}
       <Section id="tutorial" className="bg-gradient-to-b from-raya-emerald/5 to-transparent">
         <div className="text-center mb-12">
