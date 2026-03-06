@@ -43,9 +43,9 @@ const BONUS_CAPS = [
 ];
 
 const STREAK_BONUSES = [
-  { days: 3, reward: "$88 Extra", label: "Bronze Streak", icon: Trophy, color: "text-orange-400" },
-  { days: 5, reward: "$288 Extra", label: "Silver Streak", icon: Star, color: "text-slate-300" },
-  { days: 7, reward: "$888 Grand Prize", label: "Golden Perfect Week", icon: Crown, color: "text-raya-gold" },
+  { reward: "Total Deposit RM700 Gets RM88 Extra" },
+  { reward: "Total Deposit RM2000 Gets RM238 Extra"},
+  { reward: "Total Deposit RM5000 Gets RM588 Extra" },
 ];
 
 // --- Components ---
