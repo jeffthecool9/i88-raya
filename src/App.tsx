@@ -392,9 +392,9 @@ export default function App() {
               </motion.div>
 
               <h1 className="text-2xl md:text-4xl font-black text-white mb-4 leading-tight tracking-tight">
-                Celebrate Raya with <br className="hidden sm:block" />
+               Deposit 7 Days. Unlock  <br className="hidden sm:block" />
                 <span className="gold-gradient-text italic relative inline-block">
-                  Exclusive Rewards
+                  Up to RM588
                   <motion.div
                     className="absolute -inset-2 bg-raya-gold/8 blur-xl -z-10 rounded-full"
                     animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.08, 1] }}
