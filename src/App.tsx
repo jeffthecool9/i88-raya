@@ -308,19 +308,17 @@ export default function App() {
          <div className="relative mb-8 md:mb-12 flex flex-col items-center">
   {/* i88 Logo */}
   <motion.img
-    src="/i882.png"
-    alt="i88 Logo"
-    className="w-auto h-10 sm:h-12 md:h-16 mb-3 md:mb-4 drop-shadow-[0_0_16px_rgba(255,255,255,0.12)]"
-    initial={{ y: -10, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{
-      duration: 0.8,
-      delay: 0.2,
-      ease: 'easeOut',
-    }}
-    referrerPolicy="no-referrer"
-  />
-
+  src="/i882.png"
+  alt="i88 Logo"
+  className="w-auto h-16 sm:h-20 md:h-28 lg:h-32 mb-4 md:mb-6 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+  initial={{ y: -10, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{
+    duration: 0.8,
+    delay: 0.2,
+    ease: "easeOut",
+  }}
+/>
   {/* Raya Perfect Week */}
   <motion.img
     src="/rayaweek.png"
