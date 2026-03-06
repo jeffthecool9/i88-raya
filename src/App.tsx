@@ -665,11 +665,11 @@ export default function App() {
         >
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
 
-          <img
-            src="/i882.png"
-            alt="i88 Logo"
-            className="absolute -top-6 left-1/2 -translate-x-1/2 w-24 md:w-28 bg-[#0a200a] rounded-full p-2 shadow-xl"
-          />
+        <img
+  src="/i882.png"
+  alt="i88 Logo"
+  className="absolute -top-7 left-1/2 -translate-x-1/2 w-28 md:w-32 drop-shadow-[0_8px_20px_rgba(0,0,0,0.25)]"
+/>
 
           <div className="relative z-10 flex flex-col items-center gap-6 pt-6">
             <h2 className="text-2xl md:text-4xl font-black mb-2 gold-gradient-text uppercase tracking-tight">
