@@ -171,35 +171,35 @@ const PaymentRiver = () => {
 
   const loop = [...logos, ...logos];
 
-  return (
-    <div className="relative overflow-hidden py-6">
+ return (
+  <div className="relative overflow-hidden py-6">
 
-      {/* fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0a200a] to-transparent z-10"/>
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a200a] to-transparent z-10"/>
+    {/* GREEN fade edges instead of black */}
+    <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0a200a] to-transparent z-10 pointer-events-none" />
+    <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0a200a] to-transparent z-10 pointer-events-none" />
 
-      <motion.div
-        className="flex items-center gap-6 md:gap-10 w-max"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          duration: 20,
-          ease: "linear",
-          repeat: Infinity
-        }}
-      >
+    <motion.div
+      className="flex items-center gap-6 md:gap-10 w-max"
+      animate={{ x: ["0%", "-50%"] }}
+      transition={{
+        duration: 20,
+        ease: "linear",
+        repeat: Infinity
+      }}
+    >
         {loop.map((logo, i) => (
           <div
             key={i}
-            className="
-            flex items-center justify-center
-            w-28 h-16 md:w-36 md:h-20
-            rounded-xl
-            bg-white
-            shadow-[0_4px_20px_rgba(0,0,0,0.15)]
-            border border-white/60
-            hover:scale-105
-            transition
-            "
+           className="
+flex items-center justify-center
+w-28 h-16 md:w-36 md:h-20
+rounded-xl
+bg-white
+shadow-[0_8px_30px_rgba(0,0,0,0.18)]
+border border-white/60
+hover:scale-105
+transition
+"
           >
             <img
               src={logo}
