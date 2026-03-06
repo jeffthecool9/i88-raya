@@ -243,40 +243,42 @@ export default function App() {
 
   return (
     <div className="min-h-screen relative overflow-x-hidden bg-[#0a200a]">
-           {/* Background & Decorative Elements */}
+                {/* Background & Decorative Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {/* Main Raya gradient background */}
+        {/* Main Raya gradient background - brighter and more vibrant */}
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(circle at 50% 12%, rgba(82,132,42,0.32) 0%, rgba(82,132,42,0.12) 26%, transparent 58%),
-              linear-gradient(180deg, #52842A 0%, #2C6A1A 38%, #0F5510 68%, #003F09 100%)
+              radial-gradient(circle at 50% 10%, rgba(140, 210, 70, 0.30) 0%, rgba(82,132,42,0.18) 22%, transparent 52%),
+              radial-gradient(circle at 20% 25%, rgba(120, 200, 60, 0.16) 0%, transparent 32%),
+              radial-gradient(circle at 80% 20%, rgba(90, 180, 70, 0.14) 0%, transparent 28%),
+              linear-gradient(180deg, #6FAF34 0%, #52842A 26%, #1F6A18 62%, #003F09 100%)
             `,
           }}
         />
 
-        {/* Extra dark edge vignette for readability */}
+        {/* Contrast vignette */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.10) 58%, rgba(0,0,0,0.22) 100%)',
+              'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.08) 62%, rgba(0,0,0,0.18) 100%)',
           }}
         />
 
-        {/* Soft dark overlay to keep cards readable */}
-        <div className="absolute inset-0 bg-black/18" />
+        {/* Soft readability overlay */}
+        <div className="absolute inset-0 bg-black/10" />
 
         {/* Decorative Floral - Top Right */}
         <motion.img
           src="/KETUPAT.png"
           alt=""
           style={{ y: yFloralTop, willChange: 'transform, opacity' }}
-          className="absolute -top-16 -right-16 w-[260px] md:w-[520px] opacity-[0.08] md:opacity-[0.12] blur-[3px]"
+          className="absolute -top-16 -right-16 w-[260px] md:w-[520px] opacity-[0.12] md:opacity-[0.18] blur-[2px]"
           initial={{ opacity: 0, x: 80, rotate: 10 }}
           animate={{
-            opacity: 0.12,
+            opacity: 0.18,
             x: 0,
             rotate: [0, 0.6, -0.6, 0],
             scale: [1, 1.01, 1],
@@ -295,10 +297,10 @@ export default function App() {
           src="/KETUPAT.png"
           alt=""
           style={{ y: yFloralBottom, willChange: 'transform, opacity' }}
-          className="absolute -bottom-16 -left-16 w-[260px] md:w-[520px] opacity-[0.07] md:opacity-[0.10] blur-[4px]"
+          className="absolute -bottom-16 -left-16 w-[260px] md:w-[520px] opacity-[0.10] md:opacity-[0.14] blur-[3px]"
           initial={{ opacity: 0, x: -80, rotate: -10 }}
           animate={{
-            opacity: 0.10,
+            opacity: 0.14,
             x: 0,
             rotate: [0, -0.6, 0.6, 0],
             scale: [1, 1.015, 1],
@@ -317,11 +319,11 @@ export default function App() {
           src="/KETUPAT.png"
           alt=""
           style={{ y: yHanging, willChange: 'transform' }}
-          className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.42]"
+          className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.55]"
           initial={{ y: -220, opacity: 0 }}
           animate={{
             y: 0,
-            opacity: 0.38,
+            opacity: 0.5,
             rotate: [0, 0.5, -0.5, 0],
           }}
           transition={{
@@ -336,7 +338,7 @@ export default function App() {
         <img
           src="/KETUPAT.png"
           alt=""
-          className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-[0.18]"
+          className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-[0.28]"
           referrerPolicy="no-referrer"
         />
 
@@ -345,7 +347,7 @@ export default function App() {
           src="/rayaweek.png"
           alt=""
           style={{ y: yKetupat2, willChange: 'transform' }}
-          className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-[0.10] hidden md:block blur-[1px]"
+          className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-[0.16] hidden md:block blur-[1px]"
           animate={{
             y: [0, 10, 0],
             rotate: [0, -2, 2, 0],
@@ -354,7 +356,7 @@ export default function App() {
           referrerPolicy="no-referrer"
         />
 
-        {/* Background Atmosphere */}
+        {/* Bright atmosphere layer */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <Sparkle x="10%" y="20%" delay={0.5} size={2} />
           <Sparkle x="85%" y="15%" delay={1.2} size={2} />
