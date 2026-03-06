@@ -175,8 +175,8 @@ const PaymentRiver = () => {
   <div className="relative overflow-hidden py-6">
 
     {/* GREEN fade edges instead of black */}
-    <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0a200a] to-transparent z-10 pointer-events-none" />
-    <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0a200a] to-transparent z-10 pointer-events-none" />
+<div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#1F6A18] to-transparent z-10 pointer-events-none" />
+<div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#1F6A18] to-transparent z-10 pointer-events-none" />
 
     <motion.div
       className="flex items-center gap-6 md:gap-10 w-max"
