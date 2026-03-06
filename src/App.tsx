@@ -639,11 +639,11 @@ export default function App() {
                 transition={{ duration: 1.5, ease: 'easeInOut' }}
               />
 
-              <div className="flex flex-col gap-6 relative z-10">
+            <div className="flex flex-col items-center text-center gap-6 relative z-10">
                 <motion.div
-                  whileHover={{ scale: 1.08, rotate: 4 }}
-                  className="w-14 h-14 rounded-2xl bg-raya-gold/10 border border-raya-gold/20 flex items-center justify-center group-hover:bg-raya-gold text-raya-gold group-hover:text-raya-blue transition-all duration-300"
-                >
+  whileHover={{ scale: 1.08, rotate: 4 }}
+  className="mx-auto w-14 h-14 rounded-2xl bg-raya-gold/10 border border-raya-gold/20 flex items-center justify-center group-hover:bg-raya-gold text-raya-gold group-hover:text-raya-blue transition-all duration-300"
+>
                   <span className="text-2xl font-black">{item.step}</span>
                 </motion.div>
 
