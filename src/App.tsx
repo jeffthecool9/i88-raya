@@ -537,50 +537,70 @@ export default function App() {
           </div>
         </div>
 
-        {/* Streak Bonuses Section */}
-        <div className="mt-12 md:mt-20 max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-raya-gold/10 border border-raya-gold/20 text-raya-gold text-[10px] font-black uppercase tracking-widest mb-4"
-            >
-              <Zap className="w-3 h-3 fill-raya-gold" /> Streak Milestones <Zap className="w-3 h-3 fill-raya-gold" />
-            </motion.div>
-            <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">Unlock Extra <span className="gold-gradient-text italic">Streak Rewards</span></h3>
-          </div>
+      {/* Total Deposit Bonuses Section */}
+<div className="mt-12 md:mt-20 max-w-4xl mx-auto">
+  <div className="text-center mb-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-raya-gold/10 border border-raya-gold/20 text-raya-gold text-[10px] font-black uppercase tracking-widest mb-4"
+    >
+      <Zap className="w-3 h-3 fill-raya-gold" /> Total Deposit Rewards <Zap className="w-3 h-3 fill-raya-gold" />
+    </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {STREAK_BONUSES.map((streak, idx) => (
-              <motion.div
-                key={streak.days}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: idx * 0.1 }}
-                className="glass-panel p-6 border-white/5 bg-white/5 backdrop-blur-xl relative overflow-hidden group hover:border-raya-gold/30 transition-all duration-500"
-              >
-                {/* Background Glow */}
-                <div className={`absolute -right-4 -top-4 w-24 h-24 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 ${streak.color.replace('text-', 'bg-')}`} />
-                
-                <div className="relative z-10 flex items-center gap-5">
-                  <div className={`w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${streak.color} group-hover:scale-110 transition-transform duration-500`}>
-                    <streak.icon className="w-7 h-7" />
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">
-                      {streak.days} Day Streak
-                    </span>
-                    <h4 className="text-lg font-black text-white leading-tight mb-1 group-hover:text-raya-gold transition-colors duration-300">
-                      {streak.reward}
-                    </h4>
-                    <span className="text-[10px] text-white/60 font-medium italic">
-                      {streak.label}
-                    </span>
-                  </div>
-                </div>
+    <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight">
+      Unlock Extra <span className="gold-gradient-text italic">Deposit Bonuses</span>
+    </h3>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+    {STREAK_BONUSES.map((streak, idx) => (
+      <motion.div
+        key={streak.deposit}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ delay: idx * 0.1 }}
+        className="glass-panel p-6 border-white/5 bg-white/5 backdrop-blur-xl relative overflow-hidden group hover:border-raya-gold/30 transition-all duration-500"
+      >
+        <div className={`absolute -right-4 -top-4 w-24 h-24 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 ${streak.color.replace('text-', 'bg-')}`} />
+        
+        <div className="relative z-10 flex items-center gap-5">
+          <div className={`w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${streak.color} group-hover:scale-110 transition-transform duration-500`}>
+            <streak.icon className="w-7 h-7" />
+          </div>
+          
+          <div className="flex flex-col">
+            <span className="text-[10px] font-black text-white/40 uppercase tracking-widest mb-1">
+              Total Deposit {streak.deposit}
+            </span>
+            <h4 className="text-lg font-black text-white leading-tight mb-1 group-hover:text-raya-gold transition-colors duration-300">
+              {streak.reward}
+            </h4>
+            <span className="text-[10px] text-white/60 font-medium italic">
+              {streak.label}
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-6 h-1 w-full bg-white/5 rounded-full overflow-hidden">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: `${streak.progress}%` }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className={`h-full bg-gradient-to-r from-transparent ${streak.color.replace('text-', 'to-')}`}
+          />
+        </div>
+      </motion.div>
+    ))}
+  </div>
+  
+  <p className="text-center mt-8 text-[10px] text-white/40 uppercase tracking-widest font-medium">
+    * Extra rewards are based on total deposit amount achieved during the event
+  </p>
+</div>
 
                 {/* Progress Indicator (Visual Only) */}
                 <div className="mt-6 h-1 w-full bg-white/5 rounded-full overflow-hidden">
