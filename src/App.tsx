@@ -335,7 +335,7 @@ export default function App() {
         >
           <div className="relative mb-8 md:mb-12">
           <motion.img 
-            src="/RAYA-PERFECT-WEEK-LOGO.png" 
+            src="/rayaweek.png" 
             alt="Raya Perfect Week"
             className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]"
             style={{ willChange: "transform, opacity, filter" }}
