@@ -295,8 +295,8 @@ export default function App() {
 
       {/* 1. HERO & OVERVIEW */}
       <section
-        data-section="hero"
-        className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-8"
+  data-section="hero"
+  className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 md:pb-28"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
