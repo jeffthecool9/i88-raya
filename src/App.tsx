@@ -230,7 +230,7 @@ export default function App() {
 
         {/* Decorative Floral - Bottom Left */}
         <motion.img 
-          src="/input_file_0.png" 
+          src="/RAYA-PERFECT-WEEK-LOGO.png" 
           alt=""
           style={{ y: yFloralBottom, willChange: "transform, opacity" }}
           className="absolute -bottom-20 -left-20 w-[300px] md:w-[600px] opacity-20 md:opacity-30 blur-[2px] md:blur-none"
