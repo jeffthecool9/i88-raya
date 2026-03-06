@@ -458,9 +458,9 @@ export default function App() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-center group md:flex-1"
                 >
-                  <span className="text-[10px] font-black text-white/45 uppercase tracking-[0.2em] mb-4 group-hover:text-raya-gold transition-colors duration-300">
-                    Day {reward.day}
-                  </span>
+                  <span className="text-xs md:text-sm font-black text-raya-gold uppercase tracking-[0.35em] mb-4 group-hover:scale-105 transition-all duration-300">
+  DAY {reward.day}
+</span>
 
                   <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
                     <motion.img
