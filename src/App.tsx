@@ -530,11 +530,7 @@ export default function App() {
 
      
 
-          <p className="text-center mt-8 text-[10px] text-white/40 uppercase tracking-widest font-medium">
-            * Extra rewards are based on total deposit amount achieved during the event
-          </p>
-        </div>
-      </Section>
+        
 
     
       {/* 3. QUICK RULES ONLY */}
