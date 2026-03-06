@@ -158,43 +158,6 @@ const CountdownTimer = () => {
     </div>
   );
 };
-const PaymentRiver = () => {
-  const paymentMethods = [
-    'DuitNow',
-    'FPX',
-    'Maybank2u',
-    'CIMB Clicks',
-    'Public Bank',
-  ];
-
-  const loopItems = [...paymentMethods, ...paymentMethods];
-
-  return (
-    <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl">
-      <div className="absolute inset-y-0 left-0 w-16 md:w-24 bg-gradient-to-r from-[#0a200a] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-16 md:w-24 bg-gradient-to-l from-[#0a200a] to-transparent z-10 pointer-events-none" />
-
-      <motion.div
-        animate={{ x: ['0%', '-50%'] }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-        className="flex w-max items-center gap-3 md:gap-4 py-4 px-4"
-      >
-        {loopItems.map((item, idx) => (
-          <div
-            key={`${item}-${idx}`}
-            className="shrink-0 rounded-full border border-raya-gold/20 bg-[rgba(212,175,55,0.08)] px-4 py-2 md:px-5 md:py-2.5 text-[11px] md:text-[13px] font-black uppercase tracking-[0.14em] text-raya-gold shadow-[0_0_12px_rgba(212,175,55,0.06)]"
-          >
-            {item}
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-};
 
 const PaymentRiver = () => {
 
