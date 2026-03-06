@@ -43,11 +43,31 @@ const BONUS_CAPS = [
 ];
 
 const STREAK_BONUSES = [
-  { reward: "Total Deposit RM700 Gets RM88 Extra" },
-  { reward: "Total Deposit RM2000 Gets RM238 Extra"},
-  { reward: "Total Deposit RM5000 Gets RM588 Extra" },
-];;
-
+  {
+    deposit: 'RM700',
+    reward: 'RM88 Extra',
+    label: 'Total Deposit Reward',
+    icon: Wallet,
+    color: 'text-orange-400',
+    progress: 33,
+  },
+  {
+    deposit: 'RM2,000',
+    reward: 'RM238 Extra',
+    label: 'Total Deposit Reward',
+    icon: Star,
+    color: 'text-slate-300',
+    progress: 66,
+  },
+  {
+    deposit: 'RM5,000',
+    reward: 'RM588 Extra',
+    label: 'Total Deposit Reward',
+    icon: Crown,
+    color: 'text-raya-gold',
+    progress: 100,
+  },
+];
 // --- Components ---
 
 const Section = ({ children, id, className = "" }: { children: React.ReactNode, id: string, className?: string }) => (
