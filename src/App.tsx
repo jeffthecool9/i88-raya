@@ -46,7 +46,7 @@ const STREAK_BONUSES = [
   { reward: "Total Deposit RM700 Gets RM88 Extra" },
   { reward: "Total Deposit RM2000 Gets RM238 Extra"},
   { reward: "Total Deposit RM5000 Gets RM588 Extra" },
-];
+];;
 
 // --- Components ---
 
