@@ -662,7 +662,7 @@ export default function App() {
                   Raya Perfect Week
                 </p>
                 <p className="text-sm md:text-base font-black text-white leading-tight truncate">
-                  Start Your 7-Day Reward Streak
+                 Start Now
                 </p>
               </div>
 
@@ -673,7 +673,7 @@ export default function App() {
                 whileTap={{ scale: 0.96 }}
                 className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-raya-gold text-raya-blue font-black text-sm md:text-base px-4 py-3 shadow-lg"
               >
-                Join Now
+                Pre-Register
                 <ChevronRight className="w-4 h-4" />
               </motion.a>
             </div>
