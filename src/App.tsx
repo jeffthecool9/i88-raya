@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import {
   ChevronDown,
   ChevronRight,
@@ -160,59 +160,36 @@ const CountdownTimer = () => {
 };
 
 const PaymentRiver = () => {
-
-  const logos = [
-    "/maybank.jpg",
-    "/cimb.png",
-    "/publicbank.png",
-    "/duitnow.png",
-    "/fpx.jpg",
-  ];
-
+  const logos = ['/maybank.jpg', '/cimb.png', '/publicbank.png', '/duitnow.png', '/fpx.jpg'];
   const loop = [...logos, ...logos];
 
- return (
-  <div className="relative overflow-hidden py-6">
+  return (
+    <div className="relative overflow-hidden py-6">
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#1F6A18] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#1F6A18] to-transparent z-10 pointer-events-none" />
 
-    {/* GREEN fade edges instead of black */}
-<div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#1F6A18] to-transparent z-10 pointer-events-none" />
-<div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#1F6A18] to-transparent z-10 pointer-events-none" />
-
-    <motion.div
-      className="flex items-center gap-6 md:gap-10 w-max"
-      animate={{ x: ["0%", "-50%"] }}
-      transition={{
-        duration: 20,
-        ease: "linear",
-        repeat: Infinity
-      }}
-    >
+      <motion.div
+        className="flex items-center gap-6 md:gap-10 w-max"
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{
+          duration: 20,
+          ease: 'linear',
+          repeat: Infinity,
+        }}
+      >
         {loop.map((logo, i) => (
           <div
             key={i}
-           className="
-flex items-center justify-center
-w-28 h-16 md:w-36 md:h-20
-rounded-xl
-bg-white
-shadow-[0_8px_30px_rgba(0,0,0,0.18)]
-border border-white/60
-hover:scale-105
-transition
-"
+            className="flex items-center justify-center w-28 h-16 md:w-36 md:h-20 rounded-xl bg-white shadow-[0_8px_30px_rgba(0,0,0,0.18)] border border-white/60 hover:scale-105 transition"
           >
-            <img
-              src={logo}
-              alt="payment"
-              className="max-h-10 md:max-h-12 w-auto object-contain"
-            />
+            <img src={logo} alt="payment" className="max-h-10 md:max-h-12 w-auto object-contain" />
           </div>
         ))}
       </motion.div>
-
     </div>
   );
 };
+
 export default function App() {
   const { scrollYProgress } = useScroll();
 
@@ -346,6 +323,7 @@ export default function App() {
           </motion.div>
         </div>
       </div>
+
       {/* 1. HERO & OVERVIEW */}
       <section
         data-section="hero"
@@ -359,19 +337,19 @@ export default function App() {
           className="relative z-10 flex flex-col items-center"
         >
           <div className="relative mb-8 md:mb-12 flex flex-col items-center">
-           <motion.img
-  src="/i882.png"
-  alt="i88 Logo"
-  className="w-[110px] sm:w-[140px] md:w-[170px] lg:w-[200px] mb-6 md:mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
-  initial={{ y: -10, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{
-    duration: 0.8,
-    delay: 0.2,
-    ease: 'easeOut',
-  }}
-  referrerPolicy="no-referrer"
-/>
+            <motion.img
+              src="/i882.png"
+              alt="i88 Logo"
+              className="w-[110px] sm:w-[140px] md:w-[170px] lg:w-[200px] mb-6 md:mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: 'easeOut',
+              }}
+              referrerPolicy="no-referrer"
+            />
 
             <motion.img
               src="/rayaweek.png"
@@ -451,7 +429,7 @@ export default function App() {
         </motion.div>
       </section>
 
-            {/* Payment Method River */}
+      {/* Payment Method River */}
       <Section id="payment-river" className="pt-0 md:pt-2 pb-6 md:pb-10">
         <div className="text-center mb-4">
           <span className="inline-flex items-center rounded-full border border-raya-gold/20 bg-raya-gold/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.28em] text-raya-gold">
@@ -463,7 +441,7 @@ export default function App() {
       </Section>
 
       {/* 2. REWARDS CALENDAR */}
-     <Section id="rewards" className="relative z-10 bg-gradient-to-b from-transparent to-raya-emerald/10">
+      <Section id="rewards" className="relative z-10 bg-gradient-to-b from-transparent to-raya-emerald/10">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-black mb-3 gold-gradient-text uppercase tracking-tight">
             Your Reward Journey
@@ -487,11 +465,11 @@ export default function App() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-center group md:flex-1"
                 >
-                 <div className="mb-4 md:mb-5">
-  <span className="inline-flex items-center rounded-full border border-raya-gold/25 bg-[rgba(212,175,55,0.08)] px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-[13px] font-black uppercase tracking-[0.22em] text-raya-gold shadow-[0_0_18px_rgba(212,175,55,0.08)] backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-raya-gold/40 group-hover:bg-[rgba(212,175,55,0.12)]">
-    Day {reward.day}
-  </span>
-</div>
+                  <div className="mb-4 md:mb-5">
+                    <span className="inline-flex items-center rounded-full border border-raya-gold/25 bg-[rgba(212,175,55,0.08)] px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-[13px] font-black uppercase tracking-[0.22em] text-raya-gold shadow-[0_0_18px_rgba(212,175,55,0.08)] backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-raya-gold/40 group-hover:bg-[rgba(212,175,55,0.12)]">
+                      Day {reward.day}
+                    </span>
+                  </div>
 
                   <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
                     <motion.img
@@ -550,9 +528,11 @@ export default function App() {
                         {reward.bonus}
                       </span>
 
-                      <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">
-                        {reward.spins}
-                      </span>
+                      {reward.spins && (
+                        <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">
+                          {reward.spins}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -639,30 +619,30 @@ export default function App() {
                 transition={{ duration: 1.5, ease: 'easeInOut' }}
               />
 
-            <div className="flex flex-col items-center text-center gap-6 relative z-10">
+              <div className="flex flex-col items-center text-center gap-6 relative z-10">
                 <motion.div
-  whileHover={{ scale: 1.08, rotate: 4 }}
-  className="mx-auto w-14 h-14 rounded-2xl bg-raya-gold/10 border border-raya-gold/20 flex items-center justify-center group-hover:bg-raya-gold text-raya-gold group-hover:text-raya-blue transition-all duration-300"
->
+                  whileHover={{ scale: 1.08, rotate: 4 }}
+                  className="mx-auto w-14 h-14 rounded-2xl bg-raya-gold/10 border border-raya-gold/20 flex items-center justify-center group-hover:bg-raya-gold text-raya-gold group-hover:text-raya-blue transition-all duration-300"
+                >
                   <span className="text-2xl font-black">{item.step}</span>
                 </motion.div>
 
                 <div>
-                 <motion.h3
-  animate={{
-    y: [0, -3, 0],
-    scale: [1, 1.015, 1],
-  }}
-  transition={{
-    duration: 2.4,
-    repeat: Infinity,
-    ease: "easeInOut",
-    delay: idx * 0.25,
-  }}
-  className="text-xl md:text-2xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-raya-gold transition-colors duration-300"
->
-  {item.title}
-</motion.h3>
+                  <motion.h3
+                    animate={{
+                      y: [0, -3, 0],
+                      scale: [1, 1.015, 1],
+                    }}
+                    transition={{
+                      duration: 2.4,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                      delay: idx * 0.25,
+                    }}
+                    className="text-xl md:text-2xl font-black text-white uppercase tracking-tight mb-3 group-hover:text-raya-gold transition-colors duration-300"
+                  >
+                    {item.title}
+                  </motion.h3>
                   <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                     {item.desc}
                   </p>
@@ -683,52 +663,48 @@ export default function App() {
           viewport={{ once: true, margin: '-50px' }}
           className="glass-panel p-8 md:p-12 border-raya-gold/20 bg-gradient-to-b from-white/[0.06] to-transparent relative overflow-hidden backdrop-blur-xl"
         >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
+          <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
 
-          <h2 className="text-2xl md:text-4xl font-black mb-6 gold-gradient-text uppercase tracking-tight">
-            Ready for Your <br /> Perfect Week?
-          </h2>
+          <img
+            src="/i882.png"
+            alt="i88 Logo"
+            className="absolute -top-6 left-1/2 -translate-x-1/2 w-24 md:w-28 bg-[#0a200a] rounded-full p-2 shadow-xl"
+          />
 
-       {/* top gold bar */}
-<div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
+          <div className="relative z-10 flex flex-col items-center gap-6 pt-6">
+            <h2 className="text-2xl md:text-4xl font-black mb-2 gold-gradient-text uppercase tracking-tight">
+              Ready for Your <br /> Perfect Week?
+            </h2>
 
-{/* i88 logo badge sitting on the bar */}
-<img
-  src="/i882.png"
-  alt="i88 Logo"
-  className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 md:w-24 drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)]"
-/>
+            <motion.a
+              href={DEPOSIT_URL}
+              data-event="cta_final"
+              animate={{
+                boxShadow: [
+                  '0 0 0 0px rgba(212, 175, 55, 0)',
+                  '0 0 0 15px rgba(212, 175, 55, 0.22)',
+                  '0 0 0 30px rgba(212, 175, 55, 0)',
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+              className="group relative bg-raya-gold text-raya-blue text-lg font-black px-8 py-4 rounded-xl overflow-hidden shadow-2xl hover:scale-105 active:scale-95 transition-transform glow-shadow"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Pre-Register
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
 
-  <motion.a
-    href={DEPOSIT_URL}
-    data-event="cta_final"
-    animate={{
-      boxShadow: [
-        '0 0 0 0px rgba(212, 175, 55, 0)',
-        '0 0 0 15px rgba(212, 175, 55, 0.22)',
-        '0 0 0 30px rgba(212, 175, 55, 0)',
-      ],
-    }}
-    transition={{
-      duration: 2,
-      repeat: Infinity,
-      ease: 'easeInOut',
-    }}
-    className="group relative bg-raya-gold text-raya-blue text-lg font-black px-8 py-4 rounded-xl overflow-hidden shadow-2xl hover:scale-105 active:scale-95 transition-transform glow-shadow"
-  >
-    <span className="relative z-10 flex items-center gap-2">
-      Pre-Register
-      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-    </span>
-
-    <motion.div
-      className="absolute inset-0 bg-white/20"
-      animate={{ x: ['-100%', '100%'] }}
-      transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
-    />
-  </motion.a>
-
-</div>
+              <motion.div
+                className="absolute inset-0 bg-white/20"
+                animate={{ x: ['-100%', '100%'] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+              />
+            </motion.a>
+          </div>
         </motion.div>
 
         <div className="mt-8 text-[9px] text-white/20 uppercase tracking-[0.4em]">
@@ -751,7 +727,7 @@ export default function App() {
                   Raya Perfect Week
                 </p>
                 <p className="text-sm md:text-base font-black text-white leading-tight truncate">
-                 Start Now
+                  Start Now
                 </p>
               </div>
 
