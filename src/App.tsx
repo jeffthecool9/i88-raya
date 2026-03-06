@@ -689,34 +689,45 @@ export default function App() {
             Ready for Your <br /> Perfect Week?
           </h2>
 
-          <div className="flex flex-col items-center gap-6">
-            <motion.a
-              href={DEPOSIT_URL}
-              data-event="cta_final"
-              animate={{
-                boxShadow: [
-                  '0 0 0 0px rgba(212, 175, 55, 0)',
-                  '0 0 0 15px rgba(212, 175, 55, 0.22)',
-                  '0 0 0 30px rgba(212, 175, 55, 0)',
-                ],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="group relative bg-raya-gold text-raya-blue text-lg font-black px-8 py-4 rounded-xl overflow-hidden shadow-2xl hover:scale-105 active:scale-95 transition-transform glow-shadow"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Pre-Register <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <motion.div
-                className="absolute inset-0 bg-white/20"
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
-              />
-            </motion.a>
-          </div>
+         <div className="flex flex-col items-center gap-6 relative">
+
+  {/* i88 logo centered above button */}
+  <img
+    src="/i882.png"
+    alt="i88 Logo"
+    className="w-20 md:w-24 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]"
+  />
+
+  <motion.a
+    href={DEPOSIT_URL}
+    data-event="cta_final"
+    animate={{
+      boxShadow: [
+        '0 0 0 0px rgba(212, 175, 55, 0)',
+        '0 0 0 15px rgba(212, 175, 55, 0.22)',
+        '0 0 0 30px rgba(212, 175, 55, 0)',
+      ],
+    }}
+    transition={{
+      duration: 2,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    }}
+    className="group relative bg-raya-gold text-raya-blue text-lg font-black px-8 py-4 rounded-xl overflow-hidden shadow-2xl hover:scale-105 active:scale-95 transition-transform glow-shadow"
+  >
+    <span className="relative z-10 flex items-center gap-2">
+      Pre-Register
+      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+    </span>
+
+    <motion.div
+      className="absolute inset-0 bg-white/20"
+      animate={{ x: ['-100%', '100%'] }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+    />
+  </motion.a>
+
+</div>
         </motion.div>
 
         <div className="mt-8 text-[9px] text-white/20 uppercase tracking-[0.4em]">
