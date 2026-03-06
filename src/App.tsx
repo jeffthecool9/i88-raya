@@ -305,25 +305,41 @@ export default function App() {
           transition={{ duration: 1 }}
           className="relative z-10 flex flex-col items-center"
         >
-          <div className="relative mb-8 md:mb-12">
-            <motion.img
-              src="/rayaweek.png"
-              alt="Raya Perfect Week"
-              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_18px_rgba(212,175,55,0.18)]"
-              style={{ willChange: 'transform, opacity, filter' }}
-              initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
-              animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
-              transition={{
-                duration: 1,
-                delay: 0.4,
-                type: 'spring',
-                stiffness: 100,
-              }}
-              referrerPolicy="no-referrer"
-            />
+         <div className="relative mb-8 md:mb-12 flex flex-col items-center">
+  {/* i88 Logo */}
+  <motion.img
+    src="/i882.png"
+    alt="i88 Logo"
+    className="w-auto h-10 sm:h-12 md:h-16 mb-3 md:mb-4 drop-shadow-[0_0_16px_rgba(255,255,255,0.12)]"
+    initial={{ y: -10, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{
+      duration: 0.8,
+      delay: 0.2,
+      ease: 'easeOut',
+    }}
+    referrerPolicy="no-referrer"
+  />
 
-            <div className="absolute inset-0 bg-raya-gold/6 blur-[50px] -z-10 rounded-full scale-150" />
-          </div>
+  {/* Raya Perfect Week */}
+  <motion.img
+    src="/rayaweek.png"
+    alt="Raya Perfect Week"
+    className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_18px_rgba(212,175,55,0.18)]"
+    style={{ willChange: 'transform, opacity, filter' }}
+    initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
+    animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
+    transition={{
+      duration: 1,
+      delay: 0.4,
+      type: 'spring',
+      stiffness: 100,
+    }}
+    referrerPolicy="no-referrer"
+  />
+
+  <div className="absolute inset-0 bg-raya-gold/6 blur-[50px] -z-10 rounded-full scale-150" />
+</div>
 
           <div className="glass-panel p-6 sm:p-8 md:p-12 border-white/10 bg-[rgba(15,50,15,0.68)] backdrop-blur-[22px] max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/12 to-black/22" />
