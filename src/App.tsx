@@ -527,12 +527,8 @@ export default function App() {
             </div>
           </div>
         </div>
+      </Section>
 
-     
-
-        
-
-    
       {/* 3. QUICK RULES ONLY */}
       <Section id="tiers-rules" className="bg-raya-emerald/5">
         <div className="max-w-3xl mx-auto">
