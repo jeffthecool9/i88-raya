@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   AlertCircle,
   Moon,
-
 } from 'lucide-react';
 
 // --- Constants ---
@@ -23,10 +22,6 @@ const DAILY_REWARDS = [
   { day: 6, date: '24 Mar', bonus: '10% Bonus', spins: '50 Tokens', highlight: true },
  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', spins: 'Final Reward', highlight: true },
 ];
-
-
-
-
 
 // --- Components ---
 
