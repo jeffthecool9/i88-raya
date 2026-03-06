@@ -409,7 +409,7 @@ export default function App() {
                   7 consecutive days
                 </span>{' '}
                 to unlock the ultimate{' '}
-                <span className="text-raya-gold font-black">Perfect Week Grand Credit</span>.
+                <span className="text-raya-gold font-black">Raya Perfect Week</span>.
               </p>
 
               <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
