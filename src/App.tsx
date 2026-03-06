@@ -422,9 +422,11 @@ export default function App() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-center group md:flex-1"
                 >
-                  <span className="text-xs md:text-sm font-black text-raya-gold uppercase tracking-[0.35em] mb-4 group-hover:scale-105 transition-all duration-300">
-                    DAY {reward.day}
-                  </span>
+                 <div className="mb-4 md:mb-5">
+  <span className="inline-flex items-center rounded-full border border-raya-gold/25 bg-[rgba(212,175,55,0.08)] px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-[13px] font-black uppercase tracking-[0.22em] text-raya-gold shadow-[0_0_18px_rgba(212,175,55,0.08)] backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-raya-gold/40 group-hover:bg-[rgba(212,175,55,0.12)]">
+    Day {reward.day}
+  </span>
+</div>
 
                   <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
                     <motion.img
