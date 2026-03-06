@@ -24,7 +24,7 @@ const DAILY_REWARDS = [
   { day: 4, date: '22 Mar', bonus: '20% Bonus', spins: '50 Tokens', highlight: true },
   { day: 5, date: '23 Mar', bonus: '10% Bonus', spins: '50 Tokens', highlight: true },
   { day: 6, date: '24 Mar', bonus: '10% Bonus', spins: '50 Tokens', highlight: true },
-  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', spins:  highlight: true, isCTA: true },
+  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', spins: highlight: true},
 ];
 
 const CREDIT_TIERS = [
