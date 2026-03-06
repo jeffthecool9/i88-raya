@@ -689,14 +689,15 @@ export default function App() {
             Ready for Your <br /> Perfect Week?
           </h2>
 
-         <div className="flex flex-col items-center gap-6 relative">
+       {/* top gold bar */}
+<div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
 
-  {/* i88 logo centered above button */}
-  <img
-    src="/i882.png"
-    alt="i88 Logo"
-    className="w-20 md:w-24 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]"
-  />
+{/* i88 logo badge sitting on the bar */}
+<img
+  src="/i882.png"
+  alt="i88 Logo"
+  className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 md:w-24 drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)]"
+/>
 
   <motion.a
     href={DEPOSIT_URL}
