@@ -500,9 +500,7 @@ export default function App() {
                       alt="Ketupat"
                       animate={reward.highlight ? { scale: [1, 1.05, 1] } : {}}
                       transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                      className={`w-full h-full object-contain drop-shadow-lg ${
-                        reward.highlight ? 'brightness-110' : 'opacity-70 grayscale-[0.2]'
-                      }`}
+                      className={`w-full h-full object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.6)] brightness-110`}
                       referrerPolicy="no-referrer"
                     />
 
@@ -528,7 +526,7 @@ export default function App() {
                             repeat: Infinity,
                             ease: 'easeInOut',
                           }}
-                          className="absolute inset-0 rounded-full bg-raya-gold/20 -z-10 blur-2xl"
+                         className="absolute inset-0 rounded-full bg-raya-gold/35 -z-10 blur-[35px]"
                         />
                         <motion.div
                           animate={{ rotate: 360 }}
