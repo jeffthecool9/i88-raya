@@ -95,7 +95,7 @@ const Sparkle = ({
     initial={{ scale: 0, opacity: 0 }}
     animate={{
       scale: [0, 1, 0],
-      opacity: [0, 1, 0],
+      opacity: [0, 0.7, 0],
       rotate: [0, 180],
     }}
     transition={{
@@ -122,11 +122,11 @@ const Lantern = ({
     initial={{ y: '110vh', opacity: 0 }}
     animate={{
       y: '-20vh',
-      opacity: [0, 0.5, 0.5, 0],
-      x: ['0%', '5%', '-5%', '0%'],
+      opacity: [0, 0.28, 0.28, 0],
+      x: ['0%', '3%', '-3%', '0%'],
     }}
     transition={{
-      duration: 40 + Math.random() * 20,
+      duration: 44 + Math.random() * 18,
       repeat: Infinity,
       delay,
       ease: 'linear',
@@ -136,8 +136,8 @@ const Lantern = ({
   >
     <motion.div
       animate={{
-        opacity: [0.4, 0.7, 0.4],
-        scale: [1, 1.05, 1],
+        opacity: [0.25, 0.45, 0.25],
+        scale: [1, 1.03, 1],
       }}
       transition={{
         duration: 6 + Math.random() * 4,
@@ -145,9 +145,9 @@ const Lantern = ({
         ease: 'easeInOut',
       }}
       style={{ width: size, height: size * 1.4, willChange: 'transform, opacity' }}
-      className="bg-gradient-to-b from-raya-gold/40 to-raya-gold/10 rounded-t-full rounded-b-xl relative"
+      className="bg-gradient-to-b from-raya-gold/20 to-raya-gold/5 rounded-t-full rounded-b-xl relative"
     >
-      <div className="absolute inset-0 bg-raya-gold/20 blur-md rounded-full -z-10" />
+      <div className="absolute inset-0 bg-raya-gold/10 blur-md rounded-full -z-10" />
       <div className="absolute inset-0 bg-white/5 rounded-t-full rounded-b-xl blur-[2px]" />
     </motion.div>
   </motion.div>
@@ -185,10 +185,10 @@ const CountdownTimer = () => {
         { label: 'Secs', value: timeLeft.seconds },
       ].map((item) => (
         <div key={item.label} className="flex flex-col items-center">
-          <div className="glass-panel w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-raya-gold border-raya-gold/20">
+          <div className="glass-panel w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center text-lg sm:text-xl md:text-2xl font-bold text-raya-gold border-white/10 bg-white/8 backdrop-blur-xl">
             {item.value.toString().padStart(2, '0')}
           </div>
-          <span className="text-[8px] sm:text-[10px] uppercase tracking-widest mt-2 text-white/50">
+          <span className="text-[8px] sm:text-[10px] uppercase tracking-widest mt-2 text-white/45">
             {item.label}
           </span>
         </div>
@@ -235,124 +235,127 @@ const AccordionItem = ({
 export default function App() {
   const { scrollYProgress } = useScroll();
 
-  const yFloralTop = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const yFloralBottom = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const yHanging = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const yKetupat1 = useTransform(scrollYProgress, [0, 1], [0, -250]);
-  const yKetupat2 = useTransform(scrollYProgress, [0, 1], [0, -180]);
-  const yLanterns = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const yFloralTop = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const yFloralBottom = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const yHanging = useTransform(scrollYProgress, [0, 1], [0, -18]);
+  const yKetupat2 = useTransform(scrollYProgress, [0, 1], [0, -35]);
+  const yLanterns = useTransform(scrollYProgress, [0, 1], [0, -45]);
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="min-h-screen relative overflow-x-hidden bg-[#0a200a]">
+      {/* Background & Decorative Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(82,132,42,0.2)_0%,transparent_70%)]" />
+        {/* Base darkening */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/28 via-black/24 to-black/38" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(82,132,42,0.12)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.12)_55%,rgba(0,0,0,0.22)_100%)]" />
 
+        {/* Decorative Floral - Top Right */}
         <motion.img
           src="/KETUPAT.png"
           alt=""
           style={{ y: yFloralTop, willChange: 'transform, opacity' }}
-          className="absolute -top-20 -right-20 w-[300px] md:w-[600px] opacity-20 md:opacity-30 blur-[2px] md:blur-none"
-          initial={{ opacity: 0, x: 100, rotate: 15 }}
+          className="absolute -top-16 -right-16 w-[260px] md:w-[520px] opacity-[0.08] md:opacity-[0.12] blur-[3px]"
+          initial={{ opacity: 0, x: 80, rotate: 10 }}
           animate={{
-            opacity: 0.3,
+            opacity: 0.12,
             x: 0,
-            rotate: [0, 1, -1, 0],
-            scale: [1, 1.02, 1],
+            rotate: [0, 0.6, -0.6, 0],
+            scale: [1, 1.01, 1],
           }}
           transition={{
-            opacity: { duration: 3, ease: 'easeOut' },
-            x: { duration: 3, ease: 'easeOut' },
-            rotate: { duration: 30, repeat: Infinity, ease: 'easeInOut' },
+            opacity: { duration: 2.2, ease: 'easeOut' },
+            x: { duration: 2.2, ease: 'easeOut' },
+            rotate: { duration: 24, repeat: Infinity, ease: 'easeInOut' },
+            scale: { duration: 22, repeat: Infinity, ease: 'easeInOut' },
+          }}
+          referrerPolicy="no-referrer"
+        />
+
+        {/* Decorative Floral - Bottom Left */}
+        <motion.img
+          src="/KETUPAT.png"
+          alt=""
+          style={{ y: yFloralBottom, willChange: 'transform, opacity' }}
+          className="absolute -bottom-16 -left-16 w-[260px] md:w-[520px] opacity-[0.07] md:opacity-[0.1] blur-[4px]"
+          initial={{ opacity: 0, x: -80, rotate: -10 }}
+          animate={{
+            opacity: 0.1,
+            x: 0,
+            rotate: [0, -0.6, 0.6, 0],
+            scale: [1, 1.015, 1],
+          }}
+          transition={{
+            opacity: { duration: 2.2, ease: 'easeOut', delay: 0.3 },
+            x: { duration: 2.2, ease: 'easeOut', delay: 0.3 },
+            rotate: { duration: 28, repeat: Infinity, ease: 'easeInOut' },
             scale: { duration: 25, repeat: Infinity, ease: 'easeInOut' },
           }}
           referrerPolicy="no-referrer"
         />
 
-        <motion.img
-          src="/KETUPAT.png"
-          alt=""
-          style={{ y: yFloralBottom, willChange: 'transform, opacity' }}
-          className="absolute -bottom-20 -left-20 w-[300px] md:w-[600px] opacity-20 md:opacity-30 blur-[2px] md:blur-none"
-          initial={{ opacity: 0, x: -100, rotate: -15 }}
-          animate={{
-            opacity: 0.3,
-            x: 0,
-            rotate: [0, -1, 1, 0],
-            scale: [1, 1.03, 1],
-          }}
-          transition={{
-            opacity: { duration: 3, ease: 'easeOut', delay: 0.4 },
-            x: { duration: 3, ease: 'easeOut', delay: 0.4 },
-            rotate: { duration: 35, repeat: Infinity, ease: 'easeInOut' },
-            scale: { duration: 30, repeat: Infinity, ease: 'easeInOut' },
-          }}
-          referrerPolicy="no-referrer"
-        />
-
+        {/* Hanging Decoration - Top Right */}
         <motion.img
           src="/KETUPAT.png"
           alt=""
           style={{ y: yHanging, willChange: 'transform' }}
-          className="absolute top-0 right-0 w-64 md:w-[500px] z-20 origin-top"
-          initial={{ y: -300, opacity: 0 }}
+          className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.48]"
+          initial={{ y: -220, opacity: 0 }}
           animate={{
             y: 0,
-            opacity: 1,
-            rotate: [0, 1, -1, 0],
+            opacity: 0.42,
+            rotate: [0, 0.5, -0.5, 0],
           }}
           transition={{
-            y: { duration: 2.5, type: 'spring', bounce: 0.4 },
-            rotate: { duration: 12, repeat: Infinity, ease: 'easeInOut' },
-            opacity: { duration: 1.5 },
+            y: { duration: 2.2, type: 'spring', bounce: 0.2 },
+            rotate: { duration: 14, repeat: Infinity, ease: 'easeInOut' },
+            opacity: { duration: 1.4 },
           }}
           referrerPolicy="no-referrer"
         />
 
-        <motion.img
+        {/* Top-left ketupat: now static, no scroll-follow, no bobbing */}
+        <img
           src="/KETUPAT.png"
           alt=""
-          style={{ y: yKetupat1, willChange: 'transform' }}
-          className="absolute top-[15%] left-[5%] w-20 md:w-32 z-10 opacity-60"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 5, -5, 0],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-[0.22]"
           referrerPolicy="no-referrer"
         />
 
+        {/* Secondary background element, much softer */}
         <motion.img
           src="/rayaweek.png"
           alt=""
           style={{ y: yKetupat2, willChange: 'transform' }}
-          className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-40 hidden md:block"
+          className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-[0.12] hidden md:block blur-[1px]"
           animate={{
-            y: [0, 30, 0],
-            rotate: [0, -8, 8, 0],
+            y: [0, 10, 0],
+            rotate: [0, -2, 2, 0],
           }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
           referrerPolicy="no-referrer"
         />
 
+        {/* Background Atmosphere */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <Sparkle x="10%" y="20%" delay={0.5} size={3} />
+          <Sparkle x="10%" y="20%" delay={0.5} size={2} />
           <Sparkle x="85%" y="15%" delay={1.2} size={2} />
-          <Sparkle x="40%" y="40%" delay={2.5} size={4} />
+          <Sparkle x="40%" y="40%" delay={2.5} size={3} />
           <Sparkle x="70%" y="60%" delay={0.8} size={2} />
-          <Sparkle x="25%" y="80%" delay={3.1} size={3} />
+          <Sparkle x="25%" y="80%" delay={3.1} size={2} />
           <Sparkle x="90%" y="90%" delay={1.5} size={2} />
-          <Sparkle x="5%" y="50%" delay={2.2} size={3} />
+          <Sparkle x="5%" y="50%" delay={2.2} size={2} />
 
           <motion.div style={{ y: yLanterns, willChange: 'transform' }} className="absolute inset-0">
-            <Lantern delay={0} x="15%" size={30} />
-            <Lantern delay={5} x="80%" size={45} />
-            <Lantern delay={2} x="35%" size={25} />
-            <Lantern delay={8} x="65%" size={35} />
-            <Lantern delay={12} x="50%" size={40} />
+            <Lantern delay={0} x="15%" size={24} />
+            <Lantern delay={5} x="80%" size={34} />
+            <Lantern delay={2} x="35%" size={22} />
+            <Lantern delay={8} x="65%" size={28} />
           </motion.div>
         </div>
       </div>
 
+      {/* 1. HERO & OVERVIEW */}
       <section
         data-section="hero"
         className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-8"
@@ -368,23 +371,27 @@ export default function App() {
             <motion.img
               src="/rayaweek.png"
               alt="Raya Perfect Week"
-              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_18px_rgba(212,175,55,0.18)]"
               style={{ willChange: 'transform, opacity, filter' }}
-              initial={{ scale: 0.8, opacity: 0, filter: 'blur(10px)' }}
+              initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
               animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
               transition={{
                 duration: 1,
-                delay: 0.5,
+                delay: 0.4,
                 type: 'spring',
                 stiffness: 100,
               }}
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-raya-gold/10 blur-[60px] -z-10 rounded-full scale-150" />
+
+            <div className="absolute inset-0 bg-raya-gold/6 blur-[50px] -z-10 rounded-full scale-150" />
           </div>
 
-          <div className="glass-panel p-6 sm:p-8 md:p-12 border-white/10 bg-white/5 backdrop-blur-2xl max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-raya-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+          <div className="glass-panel p-6 sm:p-8 md:p-12 border-white/10 bg-[rgba(15,50,15,0.68)] backdrop-blur-[22px] max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+            {/* darker internal shield */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/12 to-black/22" />
+            <div className="absolute inset-0 bg-gradient-to-br from-raya-gold/6 to-transparent opacity-70" />
+            <div className="absolute inset-0 rounded-[2rem] md:rounded-[2.5rem] ring-1 ring-white/8" />
 
             <div className="relative z-10 flex flex-col items-center">
               <motion.div
@@ -402,14 +409,14 @@ export default function App() {
                 <span className="gold-gradient-text italic relative inline-block">
                   Exclusive Rewards
                   <motion.div
-                    className="absolute -inset-2 bg-raya-gold/10 blur-xl -z-10 rounded-full"
-                    animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.15, 1] }}
+                    className="absolute -inset-2 bg-raya-gold/8 blur-xl -z-10 rounded-full"
+                    animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.08, 1] }}
                     transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                   />
                 </span>
               </h1>
 
-              <p className="text-sm md:text-base text-white/70 mb-8 max-w-lg mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-white/80 mb-8 max-w-lg mx-auto leading-relaxed">
                 Login & Deposit daily for{' '}
                 <span className="text-white font-bold underline decoration-raya-gold underline-offset-4">
                   7 consecutive days
@@ -422,7 +429,7 @@ export default function App() {
 
               <div className="flex flex-col items-center gap-6">
                 <div className="flex flex-col items-center gap-2">
-                  <span className="text-[10px] uppercase tracking-[0.4em] text-raya-gold/60 font-black">
+                  <span className="text-[10px] uppercase tracking-[0.4em] text-raya-gold/70 font-black">
                     Event Ends In
                   </span>
                   <CountdownTimer />
@@ -433,14 +440,15 @@ export default function App() {
         </motion.div>
 
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/20"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.4, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/18"
         >
           <ChevronDown className="w-8 h-8" />
         </motion.div>
       </section>
 
+      {/* 2. REWARDS CALENDAR */}
       <Section id="rewards" className="bg-gradient-to-b from-transparent to-raya-emerald/10">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 gold-gradient-text uppercase tracking-tight">
@@ -451,7 +459,7 @@ export default function App() {
 
         <div className="relative py-8 md:py-12 px-2 md:px-4">
           <div className="relative">
-            <div className="hidden md:block absolute top-[52px] left-[5%] right-[5%] h-0.5 bg-gradient-to-r from-white/5 via-raya-gold/30 to-white/5 z-0" />
+            <div className="hidden md:block absolute top-[52px] left-[5%] right-[5%] h-0.5 bg-gradient-to-r from-white/5 via-raya-gold/20 to-white/5 z-0" />
 
             <div className="grid grid-cols-2 sm:grid-cols-4 md:flex md:justify-between items-start relative z-10 gap-x-4 gap-y-8 md:gap-y-0">
               {DAILY_REWARDS.map((reward, idx) => (
@@ -463,7 +471,7 @@ export default function App() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-center group md:flex-1"
                 >
-                  <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] mb-4 group-hover:text-raya-gold transition-colors duration-300">
+                  <span className="text-[10px] font-black text-white/45 uppercase tracking-[0.2em] mb-4 group-hover:text-raya-gold transition-colors duration-300">
                     Day {reward.day}
                   </span>
 
@@ -474,7 +482,7 @@ export default function App() {
                       animate={reward.highlight ? { scale: [1, 1.05, 1] } : {}}
                       transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                       className={`w-full h-full object-contain drop-shadow-lg ${
-                        reward.highlight ? 'brightness-110' : 'opacity-60 grayscale-[0.3]'
+                        reward.highlight ? 'brightness-110' : 'opacity-70 grayscale-[0.2]'
                       }`}
                       referrerPolicy="no-referrer"
                     />
@@ -494,25 +502,19 @@ export default function App() {
                         <motion.div
                           animate={{
                             scale: [1, 1.2, 1],
-                            opacity: [0.3, 0.6, 0.3],
+                            opacity: [0.2, 0.45, 0.2],
                           }}
-                          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                          className="absolute inset-0 rounded-full bg-raya-gold/30 -z-10 blur-2xl"
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                          }}
+                          className="absolute inset-0 rounded-full bg-raya-gold/20 -z-10 blur-2xl"
                         />
                         <motion.div
                           animate={{ rotate: 360 }}
                           transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                          className="absolute inset-[-8px] rounded-full border border-dashed border-raya-gold/40 -z-10"
-                        />
-                        <div className="absolute inset-0 pointer-events-none">
-                          <Sparkle x="20%" y="20%" delay={0.2} size={2} />
-                          <Sparkle x="80%" y="30%" delay={0.5} size={3} />
-                          <Sparkle x="50%" y="80%" delay={0.8} size={2} />
-                        </div>
-                        <motion.div
-                          animate={{ scale: [1, 1.1, 1] }}
-                          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                          className="absolute inset-0 bg-gradient-to-t from-raya-gold/20 to-transparent rounded-full -z-10"
+                          className="absolute inset-[-8px] rounded-full border border-dashed border-raya-gold/25 -z-10"
                         />
                       </>
                     )}
@@ -530,7 +532,7 @@ export default function App() {
                       >
                         {reward.bonus}
                       </span>
-                      <span className="text-[8px] md:text-[10px] text-white/40 font-medium italic">
+                      <span className="text-[8px] md:text-[10px] text-white/45 font-medium italic">
                         {reward.spins}
                       </span>
                     </div>
@@ -566,7 +568,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ delay: idx * 0.1 }}
-                className="glass-panel p-6 border-white/5 bg-white/5 backdrop-blur-xl relative overflow-hidden group hover:border-raya-gold/30 transition-all duration-500"
+                className="glass-panel p-6 border-white/5 bg-white/[0.05] backdrop-blur-xl relative overflow-hidden group hover:border-raya-gold/20 transition-all duration-500"
               >
                 <div
                   className={`absolute -right-4 -top-4 w-24 h-24 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 ${streak.color.replace(
@@ -617,9 +619,10 @@ export default function App() {
         </div>
       </Section>
 
+      {/* 3. TIERS & RULES */}
       <Section id="tiers-rules" className="bg-raya-emerald/5">
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass-panel p-5 border-raya-gold/20">
+          <div className="glass-panel p-5 border-raya-gold/20 bg-white/[0.04] backdrop-blur-xl">
             <h3 className="text-lg font-bold mb-4 gold-gradient-text uppercase">Free Credit Tiers</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-2">
               {CREDIT_TIERS.map((tier) => (
@@ -645,7 +648,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="glass-panel p-5 bg-raya-emerald/20 border-raya-emerald/30">
+          <div className="glass-panel p-5 bg-white/[0.05] border-raya-emerald/20 backdrop-blur-xl">
             <h3 className="text-lg font-bold mb-4 gold-gradient-text uppercase">Quick Rules</h3>
             <ul className="space-y-2 text-[11px] text-white/80">
               <li className="flex items-start gap-2">
@@ -665,6 +668,7 @@ export default function App() {
         </div>
       </Section>
 
+      {/* 4. HOW TO PARTICIPATE */}
       <Section id="tutorial" className="bg-gradient-to-b from-raya-emerald/5 to-transparent">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-black gold-gradient-text uppercase tracking-tight mb-2">
@@ -674,7 +678,7 @@ export default function App() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto relative">
-          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-px bg-gradient-to-r from-raya-gold/0 via-raya-gold/40 to-raya-gold/0 z-0" />
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-px bg-gradient-to-r from-raya-gold/0 via-raya-gold/30 to-raya-gold/0 z-0" />
 
           {[
             {
@@ -700,8 +704,8 @@ export default function App() {
                 delay: idx * 0.2,
                 ease: [0.21, 0.47, 0.32, 0.98],
               }}
-              whileHover={{ y: -8 }}
-              className="glass-panel p-8 border-white/10 bg-white/5 relative group hover:border-raya-gold/40 transition-all duration-500 overflow-hidden"
+              whileHover={{ y: -6 }}
+              className="glass-panel p-8 border-white/10 bg-white/[0.05] relative group hover:border-raya-gold/25 transition-all duration-500 overflow-hidden backdrop-blur-xl"
             >
               <div
                 className={`absolute -right-10 -bottom-10 w-40 h-40 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${item.glow}`}
@@ -715,7 +719,7 @@ export default function App() {
 
               <div className="flex flex-col gap-6 relative z-10">
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.08, rotate: 4 }}
                   className="w-14 h-14 rounded-2xl bg-raya-gold/10 border border-raya-gold/20 flex items-center justify-center group-hover:bg-raya-gold text-raya-gold group-hover:text-raya-blue transition-all duration-300"
                 >
                   <span className="text-2xl font-black">{item.step}</span>
@@ -731,18 +735,19 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-raya-gold/0 to-transparent group-hover:via-raya-gold/40 transition-all duration-700" />
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-raya-gold/0 to-transparent group-hover:via-raya-gold/35 transition-all duration-700" />
             </motion.div>
           ))}
         </div>
       </Section>
 
+      {/* 5. FINAL CTA */}
       <Section id="final" className="text-center pb-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: '-50px' }}
-          className="glass-panel p-8 md:p-12 border-raya-gold/20 bg-gradient-to-b from-raya-gold/5 to-transparent relative overflow-hidden"
+          className="glass-panel p-8 md:p-12 border-raya-gold/20 bg-gradient-to-b from-white/[0.06] to-transparent relative overflow-hidden backdrop-blur-xl"
         >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
 
@@ -757,7 +762,7 @@ export default function App() {
               animate={{
                 boxShadow: [
                   '0 0 0 0px rgba(212, 175, 55, 0)',
-                  '0 0 0 15px rgba(212, 175, 55, 0.3)',
+                  '0 0 0 15px rgba(212, 175, 55, 0.22)',
                   '0 0 0 30px rgba(212, 175, 55, 0)',
                 ],
               }}
