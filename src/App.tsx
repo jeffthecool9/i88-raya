@@ -252,7 +252,7 @@ export default function App() {
 
         {/* Hanging Decorations - Top Right */}
         <motion.img 
-          src="/LAMPU.png" 
+          src="/KETUPAT.png" 
           alt=""
           style={{ y: yHanging, willChange: "transform" }}
           className="absolute top-0 right-0 w-64 md:w-[500px] z-20 origin-top"
