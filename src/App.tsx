@@ -243,12 +243,30 @@ export default function App() {
 
   return (
     <div className="min-h-screen relative overflow-x-hidden bg-[#0a200a]">
-      {/* Background & Decorative Elements */}
+           {/* Background & Decorative Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {/* Base darkening */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/28 via-black/24 to-black/38" />
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(82,132,42,0.12)_0%,transparent_70%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.12)_55%,rgba(0,0,0,0.22)_100%)]" />
+        {/* Main Raya gradient background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(circle at 50% 12%, rgba(82,132,42,0.32) 0%, rgba(82,132,42,0.12) 26%, transparent 58%),
+              linear-gradient(180deg, #52842A 0%, #2C6A1A 38%, #0F5510 68%, #003F09 100%)
+            `,
+          }}
+        />
+
+        {/* Extra dark edge vignette for readability */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.10) 58%, rgba(0,0,0,0.22) 100%)',
+          }}
+        />
+
+        {/* Soft dark overlay to keep cards readable */}
+        <div className="absolute inset-0 bg-black/18" />
 
         {/* Decorative Floral - Top Right */}
         <motion.img
@@ -277,10 +295,10 @@ export default function App() {
           src="/KETUPAT.png"
           alt=""
           style={{ y: yFloralBottom, willChange: 'transform, opacity' }}
-          className="absolute -bottom-16 -left-16 w-[260px] md:w-[520px] opacity-[0.07] md:opacity-[0.1] blur-[4px]"
+          className="absolute -bottom-16 -left-16 w-[260px] md:w-[520px] opacity-[0.07] md:opacity-[0.10] blur-[4px]"
           initial={{ opacity: 0, x: -80, rotate: -10 }}
           animate={{
-            opacity: 0.1,
+            opacity: 0.10,
             x: 0,
             rotate: [0, -0.6, 0.6, 0],
             scale: [1, 1.015, 1],
@@ -299,11 +317,11 @@ export default function App() {
           src="/KETUPAT.png"
           alt=""
           style={{ y: yHanging, willChange: 'transform' }}
-          className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.48]"
+          className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.42]"
           initial={{ y: -220, opacity: 0 }}
           animate={{
             y: 0,
-            opacity: 0.42,
+            opacity: 0.38,
             rotate: [0, 0.5, -0.5, 0],
           }}
           transition={{
@@ -314,20 +332,20 @@ export default function App() {
           referrerPolicy="no-referrer"
         />
 
-        {/* Top-left ketupat: now static, no scroll-follow, no bobbing */}
+        {/* Top-left ketupat: static */}
         <img
           src="/KETUPAT.png"
           alt=""
-          className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-[0.22]"
+          className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-[0.18]"
           referrerPolicy="no-referrer"
         />
 
-        {/* Secondary background element, much softer */}
+        {/* Secondary background element */}
         <motion.img
           src="/rayaweek.png"
           alt=""
           style={{ y: yKetupat2, willChange: 'transform' }}
-          className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-[0.12] hidden md:block blur-[1px]"
+          className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-[0.10] hidden md:block blur-[1px]"
           animate={{
             y: [0, 10, 0],
             rotate: [0, -2, 2, 0],
@@ -354,7 +372,6 @@ export default function App() {
           </motion.div>
         </div>
       </div>
-
       {/* 1. HERO & OVERVIEW */}
       <section
         data-section="hero"
