@@ -292,11 +292,10 @@ export default function App() {
           </motion.div>
         </div>
       </div>
-
       {/* 1. HERO & OVERVIEW */}
       <section
-  data-section="hero"
-  className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 md:pb-28"
+        data-section="hero"
+        className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 md:pb-28"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -305,41 +304,41 @@ export default function App() {
           transition={{ duration: 1 }}
           className="relative z-10 flex flex-col items-center"
         >
-         <div className="relative mb-8 md:mb-12 flex flex-col items-center">
-  {/* i88 Logo */}
-  <motion.img
-  src="/i882.png"
-  alt="i88 Logo"
-  className="w-auto h-16 sm:h-20 md:h-28 lg:h-32 mb-4 md:mb-6 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
-  initial={{ y: -10, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{
-    duration: 0.8,
-    delay: 0.2,
-    ease: "easeOut",
-  }}
-/>
-  {/* Raya Perfect Week */}
-  <motion.img
-    src="/rayaweek.png"
-    alt="Raya Perfect Week"
-    className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_18px_rgba(212,175,55,0.18)]"
-    style={{ willChange: 'transform, opacity, filter' }}
-    initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
-    animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
-    transition={{
-      duration: 1,
-      delay: 0.4,
-      type: 'spring',
-      stiffness: 100,
-    }}
-    referrerPolicy="no-referrer"
-  />
+          <div className="relative mb-8 md:mb-12 flex flex-col items-center">
+            <motion.img
+              src="/i882.png"
+              alt="i88 Logo"
+              className="w-auto h-16 sm:h-20 md:h-28 lg:h-32 mb-4 md:mb-6 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: 'easeOut',
+              }}
+              referrerPolicy="no-referrer"
+            />
 
-  <div className="absolute inset-0 bg-raya-gold/6 blur-[50px] -z-10 rounded-full scale-150" />
-</div>
+            <motion.img
+              src="/rayaweek.png"
+              alt="Raya Perfect Week"
+              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_18px_rgba(212,175,55,0.18)]"
+              style={{ willChange: 'transform, opacity, filter' }}
+              initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
+              animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
+              transition={{
+                duration: 1,
+                delay: 0.4,
+                type: 'spring',
+                stiffness: 100,
+              }}
+              referrerPolicy="no-referrer"
+            />
 
-          <div className="glass-panel p-6 sm:p-8 md:p-12 border-white/10 bg-[rgba(15,50,15,0.68)] backdrop-blur-[22px] max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+            <div className="absolute inset-0 bg-raya-gold/6 blur-[50px] -z-10 rounded-full scale-150" />
+          </div>
+
+          <div className="glass-panel z-20 p-6 sm:p-8 md:p-12 border border-white/10 bg-[rgba(15,50,15,0.72)] backdrop-blur-[22px] max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/12 to-black/22" />
             <div className="absolute inset-0 bg-gradient-to-br from-raya-gold/6 to-transparent opacity-70" />
             <div className="absolute inset-0 rounded-[2rem] md:rounded-[2.5rem] ring-1 ring-white/8" />
@@ -399,7 +398,7 @@ export default function App() {
       </section>
 
       {/* 2. REWARDS CALENDAR */}
-      <Section id="rewards" className="bg-gradient-to-b from-transparent to-raya-emerald/10">
+     <Section id="rewards" className="relative z-10 bg-gradient-to-b from-transparent to-raya-emerald/10">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-black mb-3 gold-gradient-text uppercase tracking-tight">
             Your Reward Journey
