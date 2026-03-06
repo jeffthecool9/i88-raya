@@ -636,34 +636,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* 3. TIERS & RULES */}
-      <Section id="tiers-rules" className="bg-raya-emerald/5">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass-panel p-5 border-raya-gold/20 bg-white/[0.04] backdrop-blur-xl">
-            <h3 className="text-lg font-bold mb-4 gold-gradient-text uppercase">Free Credit Tiers</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-2">
-              {CREDIT_TIERS.map((tier) => (
-                <div
-                  key={tier.deposit}
-                  className="p-3 sm:p-2 rounded-lg bg-white/5 border border-white/10 text-center flex sm:flex-col items-center sm:justify-center justify-between gap-2"
-                >
-                  <div className="flex flex-col items-start sm:items-center">
-                    <span className="text-[8px] text-white/40 uppercase font-bold block mb-0.5">
-                      Deposit
-                    </span>
-                    <div className="text-xs font-black">{tier.deposit}</div>
-                  </div>
-                  <div className="hidden sm:block h-px w-full bg-white/10 my-1" />
-                  <div className="flex flex-col items-end sm:items-center">
-                    <span className="text-[8px] text-white/40 uppercase font-bold block mb-0.5 sm:hidden">
-                      Credit
-                    </span>
-                    <div className="text-sm font-black text-raya-gold">{tier.credit}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+    
 
           <div className="glass-panel p-5 bg-white/[0.05] border-raya-emerald/20 backdrop-blur-xl">
             <h3 className="text-lg font-bold mb-4 gold-gradient-text uppercase">Quick Rules</h3>
