@@ -285,7 +285,7 @@ export default function App() {
         />
 
         <motion.img 
-          src="/RAYA-PERFECT-WEEK-LOGO.png" 
+          src="/rayaweek.png" 
           alt=""
           style={{ y: yKetupat2, willChange: "transform" }}
           className="absolute bottom-[20%] right-[10%] w-16 md:w-24 z-10 opacity-40 hidden md:block"
@@ -437,7 +437,7 @@ export default function App() {
                   <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
                     {/* Layer 1: Ketupat Image */}
                     <motion.img 
-                      src="/input_file_2.png" 
+                      src="/KETUPAT-2.png" 
                       alt="Ketupat" 
                       animate={reward.highlight ? { 
                         scale: [1, 1.05, 1],
