@@ -309,7 +309,7 @@ export default function App() {
           transition={{ duration: 1 }}
           className="relative z-10 flex flex-col items-center"
         >
-        <div className="relative mb-8 md:mb-12 flex flex-col items-center overflow-visible">
+    <div className="relative mb-8 md:mb-12 flex flex-col items-center overflow-visible">
   <motion.img
     src="/i882.png"
     alt="i88 Logo"
@@ -324,71 +324,101 @@ export default function App() {
     referrerPolicy="no-referrer"
   />
 
-  {/* Moving glow blobs */}
-  <div className="absolute inset-0 -z-10 pointer-events-none overflow-visible">
-    <motion.div
-      className="absolute left-1/2 top-1/2 w-[220px] h-[220px] md:w-[340px] md:h-[340px] rounded-full bg-yellow-300/35 blur-[70px]"
-      style={{ x: '-50%', y: '-50%' }}
+  <div className="relative w-full flex justify-center overflow-visible">
+    {/* outer green aura layer 1 */}
+    <motion.img
+      src="/rayaweek.png"
+      alt=""
+      aria-hidden="true"
+      className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none opacity-0"
+      style={{
+        filter:
+          'brightness(1.35) saturate(1.35) drop-shadow(0 0 10px rgba(110,255,140,0.55)) drop-shadow(0 0 22px rgba(90,255,120,0.45)) drop-shadow(0 0 42px rgba(80,255,120,0.35)) blur(1.5px)',
+      }}
+      initial={{ opacity: 0 }}
       animate={{
-        x: ['-50%', '-40%', '-58%', '-50%'],
-        y: ['-50%', '-58%', '-42%', '-50%'],
-        scale: [1, 1.15, 0.95, 1],
-        opacity: [0.35, 0.55, 0.3, 0.35],
+        opacity: [0.42, 0.72, 0.5, 0.42],
+        scale: [1.01, 1.025, 1.015, 1.01],
+        x: [0, 1.5, -1, 0],
+        y: [0, -1.5, 1, 0],
       }}
       transition={{
-        duration: 6,
+        duration: 4.5,
         repeat: Infinity,
         ease: 'easeInOut',
       }}
+      referrerPolicy="no-referrer"
     />
 
-    <motion.div
-      className="absolute left-1/2 top-1/2 w-[240px] h-[240px] md:w-[380px] md:h-[380px] rounded-full bg-green-400/30 blur-[85px]"
-      style={{ x: '-50%', y: '-50%' }}
+    {/* outer green aura layer 2 */}
+    <motion.img
+      src="/rayaweek.png"
+      alt=""
+      aria-hidden="true"
+      className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none opacity-0"
+      style={{
+        filter:
+          'brightness(1.5) saturate(1.4) drop-shadow(0 0 14px rgba(170,255,190,0.45)) drop-shadow(0 0 30px rgba(80,255,120,0.32)) blur(3px)',
+      }}
+      initial={{ opacity: 0 }}
       animate={{
-        x: ['-50%', '-62%', '-42%', '-50%'],
-        y: ['-50%', '-40%', '-60%', '-50%'],
-        scale: [1, 0.92, 1.12, 1],
-        opacity: [0.22, 0.4, 0.25, 0.22],
+        opacity: [0.2, 0.4, 0.24, 0.2],
+        scale: [1.03, 1.05, 1.035, 1.03],
+        x: [0, -2, 1, 0],
+        y: [0, 1, -2, 0],
       }}
       transition={{
-        duration: 7.5,
+        duration: 5.8,
         repeat: Infinity,
         ease: 'easeInOut',
+        delay: 0.6,
       }}
+      referrerPolicy="no-referrer"
     />
 
-    <motion.div
-      className="absolute left-1/2 top-1/2 w-[180px] h-[180px] md:w-[280px] md:h-[280px] rounded-full bg-lime-300/25 blur-[60px]"
-      style={{ x: '-50%', y: '-50%' }}
+    {/* subtle shimmer aura */}
+    <motion.img
+      src="/rayaweek.png"
+      alt=""
+      aria-hidden="true"
+      className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none"
+      style={{
+        filter:
+          'brightness(1.6) saturate(1.2) drop-shadow(0 0 8px rgba(220,255,220,0.35)) blur(0.8px)',
+      }}
       animate={{
-        x: ['-50%', '-45%', '-55%', '-50%'],
-        y: ['-50%', '-62%', '-45%', '-50%'],
-        scale: [1, 1.08, 0.96, 1],
-        opacity: [0.16, 0.3, 0.18, 0.16],
+        opacity: [0.12, 0.24, 0.14, 0.12],
       }}
       transition={{
-        duration: 5.5,
+        duration: 2.8,
         repeat: Infinity,
         ease: 'easeInOut',
       }}
+      referrerPolicy="no-referrer"
+    />
+
+    {/* real image */}
+    <motion.img
+      src="/rayaweek.png"
+      alt="Raya Perfect Week"
+      className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto"
+      style={{ willChange: 'transform, opacity, filter' }}
+      initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
+      animate={{
+        scale: 1,
+        opacity: 1,
+        filter:
+          'drop-shadow(0 0 8px rgba(212,175,55,0.18)) drop-shadow(0 0 18px rgba(80,255,120,0.10))',
+      }}
+      transition={{
+        duration: 1,
+        delay: 0.4,
+        type: 'spring',
+        stiffness: 100,
+      }}
+      referrerPolicy="no-referrer"
     />
   </div>
-
-  <motion.img
-    src="/rayaweek.png"
-    alt="Raya Perfect Week"
-    className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_20px_rgba(212,175,55,0.18)]"
-    initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
-    animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
-    transition={{
-      duration: 1,
-      delay: 0.4,
-      type: 'spring',
-      stiffness: 100,
-    }}
-    referrerPolicy="no-referrer"
-  />
 </div>
 
           <div className="glass-panel z-20 p-6 sm:p-8 md:p-12 border border-white/10 bg-[rgba(15,50,15,0.72)] backdrop-blur-[22px] max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
