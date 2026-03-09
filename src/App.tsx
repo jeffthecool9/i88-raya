@@ -268,7 +268,7 @@ export default function App() {
         />
 
         <motion.img
-          src="/i882.png"
+          src="/KETUPAT.png"
           alt=""
           style={{ y: yHanging, willChange: 'transform' }}
           className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.55]"
@@ -287,7 +287,7 @@ export default function App() {
         />
 
         <img
-          src="/KETUPAT.png"
+          src="/i882.png"
           alt=""
           className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-[0.28]"
           referrerPolicy="no-referrer"
