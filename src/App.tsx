@@ -747,7 +747,9 @@ SUPPORTED PAYMENT METHODS
 />
 
   <h2 className="text-2xl md:text-4xl font-black mb-2 gold-gradient-text uppercase tracking-tight text-center">
-    Ready for Your <br /> Perfect Week?
+    Still Not Decide yet?
+    Try it out with RM50 first
+    & gets 88 Tokens!
   </h2>
 
   <motion.a
