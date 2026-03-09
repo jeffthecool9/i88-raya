@@ -14,13 +14,13 @@ const EVENT_END_DATE = new Date('2026-03-25T23:59:59');
 const DEPOSIT_URL = 'https://example.com/deposit';
 
 const DAILY_REWARDS = [
-  { day: 1, date: '19 Mar', bonus: '10% Bonus & 50 Tokens', spins: '', highlight: true },
-  { day: 2, date: '20 Mar', bonus: '10% Bonus & 50 Tokens', spins: '', highlight: true },
-  { day: 3, date: '21 Mar', bonus: '20% Bonus & 50 Tokens', spins: '', highlight: true },
-  { day: 4, date: '22 Mar', bonus: '20% Bonus & 50 Tokens', spins: '', highlight: true },
-  { day: 5, date: '23 Mar', bonus: '10% Bonus & 50 Tokens', spins: '', highlight: true },
-  { day: 6, date: '24 Mar', bonus: '10% Bonus & 50 Tokens', spins: '', highlight: true },
-  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', spins: 'Final Reward', highlight: true },
+  { day: 1, date: '19 Mar', bonus: '10% Bonus', tokens: '50 Tokens', highlight: true },
+  { day: 2, date: '20 Mar', bonus: '10% Bonus', tokens: '50 Tokens', highlight: true },
+  { day: 3, date: '21 Mar', bonus: '20% Bonus', tokens: '50 Tokens', highlight: true },
+  { day: 4, date: '22 Mar', bonus: '20% Bonus', tokens: '50 Tokens', highlight: true },
+  { day: 5, date: '23 Mar', bonus: '10% Bonus', tokens: '50 Tokens', highlight: true },
+  { day: 6, date: '24 Mar', bonus: '10% Bonus', tokens: '50 Tokens', highlight: true },
+  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', tokens: '', spins: 'Final Reward', highlight: true },
 ];
 
 // --- Components ---
@@ -509,14 +509,21 @@ SUPPORTED PAYMENT METHODS
                       {reward.date}
                     </span>
 
-                    <div className="flex flex-col items-center gap-1">
-                      <span
-                        className={`text-sm md:text-lg font-black uppercase tracking-wide leading-tight ${
-                          reward.highlight ? 'text-white' : 'text-white/80'
-                        }`}
-                      >
-                        {reward.bonus}
-                      </span>
+                 <div className="flex flex-col items-center leading-tight">
+  <span
+    className={`text-sm md:text-lg font-black uppercase ${
+      reward.highlight ? 'text-white' : 'text-white/80'
+    }`}
+  >
+    {reward.bonus}
+  </span>
+
+  {reward.tokens && (
+    <span className="text-sm md:text-lg font-black uppercase text-white">
+      {reward.tokens}
+    </span>
+  )}
+</div>
 
                       {reward.spins && (
                         <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">
