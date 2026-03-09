@@ -268,19 +268,11 @@ export default function App() {
         />
 
         <motion.img
-         <img
+    <img
   src="/i882.png"
   alt="i88 Logo"
-  className="
-absolute
-left-1/2
--top-10
--translate-x-1/2
-w-32 md:w-40
-opacity-100
-brightness-110
-drop-shadow-[0_0_20px_rgba(255,255,255,0.35)]
-"
+  className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-90 brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.2)]"
+  referrerPolicy="no-referrer"
 />
 
        
