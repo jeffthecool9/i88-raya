@@ -268,23 +268,20 @@ export default function App() {
         />
 
         <motion.img
-          src="/KETUPAT.png"
-          alt=""
-          style={{ y: yHanging, willChange: 'transform' }}
-          className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.55]"
-          initial={{ y: -220, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 0.5,
-            rotate: [0, 0.5, -0.5, 0],
-          }}
-          transition={{
-            y: { duration: 2.2, type: 'spring', bounce: 0.2 },
-            rotate: { duration: 14, repeat: Infinity, ease: 'easeInOut' },
-            opacity: { duration: 1.4 },
-          }}
-          referrerPolicy="no-referrer"
-        />
+         <img
+  src="/i882.png"
+  alt="i88 Logo"
+  className="
+absolute
+left-1/2
+-top-10
+-translate-x-1/2
+w-32 md:w-40
+opacity-100
+brightness-110
+drop-shadow-[0_0_20px_rgba(255,255,255,0.35)]
+"
+/>
 
        
         <motion.img
