@@ -262,6 +262,23 @@ export default function App() {
           referrerPolicy="no-referrer"
         />
 
+        <motion.img
+  src="/KETUPAT.png"
+  alt=""
+  className="absolute bottom-[6%] left-1/2 -translate-x-1/2 w-28 md:w-40 z-10 opacity-[0.14] blur-[1px] pointer-events-none"
+  animate={{
+    y: [0, -8, 0],
+    rotate: [0, 1.5, -1.5, 0],
+    scale: [1, 1.02, 1],
+  }}
+  transition={{
+    duration: 10,
+    repeat: Infinity,
+    ease: 'easeInOut',
+  }}
+  referrerPolicy="no-referrer"
+/>
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <Sparkle x="10%" y="20%" delay={0.5} size={2} />
           <Sparkle x="85%" y="15%" delay={1.2} size={2} />
