@@ -430,7 +430,7 @@ SUPPORTED PAYMENT METHODS
         <PaymentRiver />
       </Section>
 
-      {/* 2. REWARDS CALENDAR */}
+          {/* 2. REWARDS CALENDAR */}
       <Section id="rewards" className="relative z-10 bg-gradient-to-b from-transparent to-raya-emerald/10">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-black mb-3 gold-gradient-text uppercase tracking-tight">
@@ -509,21 +509,20 @@ SUPPORTED PAYMENT METHODS
                       {reward.date}
                     </span>
 
-                 <div className="flex flex-col items-center leading-tight">
-  <span
-    className={`text-sm md:text-lg font-black uppercase ${
-      reward.highlight ? 'text-white' : 'text-white/80'
-    }`}
-  >
-    {reward.bonus}
-  </span>
+                    <div className="flex flex-col items-center leading-tight">
+                      <span
+                        className={`text-sm md:text-lg font-black uppercase ${
+                          reward.highlight ? 'text-white' : 'text-white/80'
+                        }`}
+                      >
+                        {reward.bonus}
+                      </span>
 
-  {reward.tokens && (
-    <span className="text-sm md:text-lg font-black uppercase text-white">
-      {reward.tokens}
-    </span>
-  )}
-</div>
+                      {reward.tokens && (
+                        <span className="text-sm md:text-lg font-black uppercase text-white">
+                          {reward.tokens}
+                        </span>
+                      )}
 
                       {reward.spins && (
                         <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">
