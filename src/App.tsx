@@ -656,11 +656,11 @@ SUPPORTED PAYMENT METHODS
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
 
        <div className="relative z-10 flex flex-col items-center gap-5 pt-2">
-  <img
-    src="/i882.png"
-    alt="i88 Logo"
-    className="w-16 md:w-20 opacity-100 brightness-110 drop-shadow-[0_0_16px_rgba(255,255,255,0.22)]"
-  />
+ <img
+  src="/i882.png"
+  alt="i88 Logo"
+  className="w-24 md:w-32 mb-2 opacity-100 brightness-110 drop-shadow-[0_0_22px_rgba(255,255,255,0.28)]"
+/>
 
   <h2 className="text-2xl md:text-4xl font-black mb-2 gold-gradient-text uppercase tracking-tight text-center">
     Ready for Your <br /> Perfect Week?
