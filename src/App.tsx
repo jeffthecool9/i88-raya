@@ -431,11 +431,28 @@ export default function App() {
 
       {/* Payment Method River */}
       <Section id="payment-river" className="pt-0 md:pt-2 pb-6 md:pb-10">
-        <div className="text-center mb-4">
-          <span className="inline-flex items-center rounded-full border border-raya-gold/20 bg-raya-gold/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.28em] text-raya-gold">
-            Supported Payment Methods
-          </span>
-        </div>
+       <div className="text-center mb-6">
+
+  <span className="
+  inline-flex items-center
+  rounded-full
+  border border-white/40
+  bg-gradient-to-b from-white to-white/80
+  backdrop-blur-md
+  px-8 py-3
+  text-sm md:text-base
+  font-black
+  uppercase
+  tracking-[0.35em]
+  text-[#1F6A18]
+  shadow-[0_8px_30px_rgba(255,255,255,0.25)]
+  ">
+
+    Supported Payment Methods
+
+  </span>
+
+</div>
 
         <PaymentRiver />
       </Section>
