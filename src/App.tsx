@@ -244,8 +244,8 @@ export default function App() {
 />
 
 <img
-  src="/i882.png"
-  alt="i88 Logo"
+  src="/KETUPAT.png"
+  alt="Ketupat"
   className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-90 brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.2)]"
   referrerPolicy="no-referrer"
 />  
