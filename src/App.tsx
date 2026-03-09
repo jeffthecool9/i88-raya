@@ -309,7 +309,7 @@ export default function App() {
           transition={{ duration: 1 }}
           className="relative z-10 flex flex-col items-center"
         >
-        <div className="relative mb-8 md:mb-12 flex flex-col items-center">
+        <div className="relative mb-8 md:mb-12 flex flex-col items-center overflow-visible">
   <motion.img
     src="/i882.png"
     alt="i88 Logo"
@@ -324,15 +324,16 @@ export default function App() {
     referrerPolicy="no-referrer"
   />
 
-  {/* Moving glow background */}
-  <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none">
+  {/* Moving glow blobs */}
+  <div className="absolute inset-0 -z-10 pointer-events-none overflow-visible">
     <motion.div
-      className="absolute w-[180px] h-[180px] md:w-[280px] md:h-[280px] rounded-full bg-raya-gold/25 blur-[55px]"
+      className="absolute left-1/2 top-1/2 w-[220px] h-[220px] md:w-[340px] md:h-[340px] rounded-full bg-yellow-300/35 blur-[70px]"
+      style={{ x: '-50%', y: '-50%' }}
       animate={{
-        x: [0, 30, -20, 0],
-        y: [0, -20, 10, 0],
+        x: ['-50%', '-40%', '-58%', '-50%'],
+        y: ['-50%', '-58%', '-42%', '-50%'],
         scale: [1, 1.15, 0.95, 1],
-        opacity: [0.25, 0.4, 0.22, 0.25],
+        opacity: [0.35, 0.55, 0.3, 0.35],
       }}
       transition={{
         duration: 6,
@@ -342,12 +343,13 @@ export default function App() {
     />
 
     <motion.div
-      className="absolute w-[200px] h-[200px] md:w-[320px] md:h-[320px] rounded-full bg-emerald-400/20 blur-[65px]"
+      className="absolute left-1/2 top-1/2 w-[240px] h-[240px] md:w-[380px] md:h-[380px] rounded-full bg-green-400/30 blur-[85px]"
+      style={{ x: '-50%', y: '-50%' }}
       animate={{
-        x: [0, -35, 25, 0],
-        y: [0, 15, -15, 0],
-        scale: [1, 0.95, 1.12, 1],
-        opacity: [0.16, 0.28, 0.18, 0.16],
+        x: ['-50%', '-62%', '-42%', '-50%'],
+        y: ['-50%', '-40%', '-60%', '-50%'],
+        scale: [1, 0.92, 1.12, 1],
+        opacity: [0.22, 0.4, 0.25, 0.22],
       }}
       transition={{
         duration: 7.5,
@@ -357,12 +359,13 @@ export default function App() {
     />
 
     <motion.div
-      className="absolute w-[140px] h-[140px] md:w-[220px] md:h-[220px] rounded-full bg-lime-300/18 blur-[45px]"
+      className="absolute left-1/2 top-1/2 w-[180px] h-[180px] md:w-[280px] md:h-[280px] rounded-full bg-lime-300/25 blur-[60px]"
+      style={{ x: '-50%', y: '-50%' }}
       animate={{
-        x: [0, 18, -22, 0],
-        y: [0, 22, -10, 0],
-        scale: [1, 1.08, 0.92, 1],
-        opacity: [0.12, 0.22, 0.12, 0.12],
+        x: ['-50%', '-45%', '-55%', '-50%'],
+        y: ['-50%', '-62%', '-45%', '-50%'],
+        scale: [1, 1.08, 0.96, 1],
+        opacity: [0.16, 0.3, 0.18, 0.16],
       }}
       transition={{
         duration: 5.5,
@@ -375,8 +378,7 @@ export default function App() {
   <motion.img
     src="/rayaweek.png"
     alt="Raya Perfect Week"
-    className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto relative z-10"
-    style={{ willChange: 'transform, opacity, filter' }}
+    className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_20px_rgba(212,175,55,0.18)]"
     initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
     animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
     transition={{
