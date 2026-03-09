@@ -309,39 +309,83 @@ export default function App() {
           transition={{ duration: 1 }}
           className="relative z-10 flex flex-col items-center"
         >
-          <div className="relative mb-8 md:mb-12 flex flex-col items-center">
-            <motion.img
-              src="/i882.png"
-              alt="i88 Logo"
-              className="w-[110px] sm:w-[140px] md:w-[170px] lg:w-[200px] mb-6 md:mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: 'easeOut',
-              }}
-              referrerPolicy="no-referrer"
-            />
+         <div className="relative mb-8 md:mb-12 flex flex-col items-center">
+  <motion.img
+    src="/i882.png"
+    alt="i88 Logo"
+    className="w-[110px] sm:w-[140px] md:w-[170px] lg:w-[200px] mb-6 md:mb-8 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+    initial={{ y: -10, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{
+      duration: 0.8,
+      delay: 0.2,
+      ease: 'easeOut',
+    }}
+    referrerPolicy="no-referrer"
+  />
 
-            <motion.img
-              src="/rayaweek.png"
-              alt="Raya Perfect Week"
-              className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto drop-shadow-[0_0_18px_rgba(212,175,55,0.18)]"
-              style={{ willChange: 'transform, opacity, filter' }}
-              initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
-              animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
-              transition={{
-                duration: 1,
-                delay: 0.4,
-                type: 'spring',
-                stiffness: 100,
-              }}
-              referrerPolicy="no-referrer"
-            />
+  {/* Glow layers behind Raya logo */}
+  <motion.div
+    className="absolute top-[32%] left-1/2 -translate-x-1/2 w-[260px] sm:w-[320px] md:w-[480px] h-[260px] sm:h-[320px] md:h-[420px] rounded-full bg-raya-gold/20 blur-[55px] -z-10"
+    animate={{
+      opacity: [0.18, 0.35, 0.18],
+      scale: [1, 1.08, 1],
+    }}
+    transition={{
+      duration: 3.5,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    }}
+  />
 
-            <div className="absolute inset-0 bg-raya-gold/6 blur-[50px] -z-10 rounded-full scale-150" />
-          </div>
+  <motion.div
+    className="absolute top-[34%] left-1/2 -translate-x-1/2 w-[220px] sm:w-[280px] md:w-[420px] h-[220px] sm:h-[280px] md:h-[360px] rounded-full bg-emerald-400/15 blur-[65px] -z-10"
+    animate={{
+      opacity: [0.12, 0.24, 0.12],
+      scale: [1, 1.06, 1],
+    }}
+    transition={{
+      duration: 4.2,
+      repeat: Infinity,
+      ease: 'easeInOut',
+      delay: 0.4,
+    }}
+  />
+
+  <motion.img
+    src="/rayaweek.png"
+    alt="Raya Perfect Week"
+    className="w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto relative z-10"
+    style={{ willChange: 'transform, opacity, filter' }}
+    initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
+    animate={{
+      scale: [1, 1.02, 1],
+      opacity: 1,
+      filter: [
+        'drop-shadow(0 0 8px rgba(212,175,55,0.18))',
+        'drop-shadow(0 0 22px rgba(212,175,55,0.35))',
+        'drop-shadow(0 0 8px rgba(212,175,55,0.18))',
+      ],
+    }}
+    transition={{
+      scale: {
+        duration: 3.2,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      },
+      filter: {
+        duration: 3.2,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      },
+      opacity: {
+        duration: 1,
+        delay: 0.4,
+      },
+    }}
+    referrerPolicy="no-referrer"
+  />
+</div>
 
           <div className="glass-panel z-20 p-6 sm:p-8 md:p-12 border border-white/10 bg-[rgba(15,50,15,0.72)] backdrop-blur-[22px] max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/12 to-black/22" />
