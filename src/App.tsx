@@ -268,7 +268,7 @@ export default function App() {
         />
 
         <motion.img
-          src="/KETUPAT.png"
+          src="/i882.png"
           alt=""
           style={{ y: yHanging, willChange: 'transform' }}
           className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.55]"
