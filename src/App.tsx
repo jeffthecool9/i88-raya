@@ -224,8 +224,7 @@ export default function App() {
         />
 
         <div className="absolute inset-0 bg-black/10" />
-
-       <motion.img
+<motion.img
   src="/KETUPAT.png"
   alt=""
   style={{ y: yHanging, willChange: 'transform' }}
