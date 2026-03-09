@@ -225,48 +225,31 @@ export default function App() {
 
         <div className="absolute inset-0 bg-black/10" />
 
-        <motion.img
-          src="/KETUPAT.png"
-          alt=""
-          style={{ y: yFloralTop, willChange: 'transform, opacity' }}
-          className="absolute -top-16 -right-16 w-[260px] md:w-[520px] opacity-[0.12] md:opacity-[0.18] blur-[2px]"
-          initial={{ opacity: 0, x: 80, rotate: 10 }}
-          animate={{
-            opacity: 0.18,
-            x: 0,
-            rotate: [0, 0.6, -0.6, 0],
-            scale: [1, 1.01, 1],
-          }}
-          transition={{
-            opacity: { duration: 2.2, ease: 'easeOut' },
-            x: { duration: 2.2, ease: 'easeOut' },
-            rotate: { duration: 24, repeat: Infinity, ease: 'easeInOut' },
-            scale: { duration: 22, repeat: Infinity, ease: 'easeInOut' },
-          }}
-          referrerPolicy="no-referrer"
-        />
+       <motion.img
+  src="/KETUPAT.png"
+  alt=""
+  style={{ y: yHanging, willChange: 'transform' }}
+  className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.55]"
+  initial={{ y: -220, opacity: 0 }}
+  animate={{
+    y: 0,
+    opacity: 0.5,
+    rotate: [0, 0.5, -0.5, 0],
+  }}
+  transition={{
+    y: { duration: 2.2, type: 'spring', bounce: 0.2 },
+    rotate: { duration: 14, repeat: Infinity, ease: 'easeInOut' },
+    opacity: { duration: 1.4 },
+  }}
+  referrerPolicy="no-referrer"
+/>
 
-        <motion.img
-          src="/KETUPAT.png"
-          alt=""
-          style={{ y: yFloralBottom, willChange: 'transform, opacity' }}
-          className="absolute -bottom-16 -left-16 w-[260px] md:w-[520px] opacity-[0.10] md:opacity-[0.14] blur-[3px]"
-          initial={{ opacity: 0, x: -80, rotate: -10 }}
-          animate={{
-            opacity: 0.14,
-            x: 0,
-            rotate: [0, -0.6, 0.6, 0],
-            scale: [1, 1.015, 1],
-          }}
-          transition={{
-            opacity: { duration: 2.2, ease: 'easeOut', delay: 0.3 },
-            x: { duration: 2.2, ease: 'easeOut', delay: 0.3 },
-            rotate: { duration: 28, repeat: Infinity, ease: 'easeInOut' },
-            scale: { duration: 25, repeat: Infinity, ease: 'easeInOut' },
-          }}
-          referrerPolicy="no-referrer"
-        />
-
+<img
+  src="/i882.png"
+  alt="i88 Logo"
+  className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-90 brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.2)]"
+  referrerPolicy="no-referrer"
+/>
         <motion.img
     <img
   src="/i882.png"
