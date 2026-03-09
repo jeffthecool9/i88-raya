@@ -286,13 +286,7 @@ export default function App() {
           referrerPolicy="no-referrer"
         />
 
-        <img
-          src="/i882.png"
-          alt=""
-          className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-[0.28]"
-          referrerPolicy="no-referrer"
-        />
-
+       
         <motion.img
           src="/rayaweek.png"
           alt=""
