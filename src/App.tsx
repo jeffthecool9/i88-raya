@@ -770,7 +770,7 @@ SUPPORTED PAYMENT METHODS
     className="group relative bg-raya-gold text-raya-blue text-lg font-black px-8 py-4 rounded-xl overflow-hidden shadow-2xl hover:scale-105 active:scale-95 transition-transform glow-shadow"
   >
     <span className="relative z-10 flex items-center gap-2">
-      Pre-Register
+      Try Now
       <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
     </span>
 
@@ -814,7 +814,7 @@ SUPPORTED PAYMENT METHODS
                 whileTap={{ scale: 0.96 }}
                 className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-raya-gold text-raya-blue font-black text-sm md:text-base px-4 py-3 shadow-lg"
               >
-                Try now
+                Pre-Register
                 <ChevronRight className="w-4 h-4" />
               </motion.a>
             </div>
