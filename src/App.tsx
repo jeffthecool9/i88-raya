@@ -814,7 +814,7 @@ SUPPORTED PAYMENT METHODS
                 whileTap={{ scale: 0.96 }}
                 className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-raya-gold text-raya-blue font-black text-sm md:text-base px-4 py-3 shadow-lg"
               >
-                Pre-Register
+                Try now
                 <ChevronRight className="w-4 h-4" />
               </motion.a>
             </div>
