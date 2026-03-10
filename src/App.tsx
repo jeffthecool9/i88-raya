@@ -749,7 +749,7 @@ SUPPORTED PAYMENT METHODS
           <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 md:px-6 md:py-5">
             <div className="text-left">
               <p className="text-xl md:text-2xl font-black text-white">
-                Deposit $50
+                Deposit RM50
               </p>
               <p className="text-sm md:text-base text-white/60">
                 Starter reward
@@ -776,7 +776,7 @@ SUPPORTED PAYMENT METHODS
                 </span>
               </div>
               <p className="text-xl md:text-2xl font-black text-white">
-                Deposit $100
+                Deposit RM100
               </p>
               <p className="text-sm md:text-base text-white/60">
                 Higher reward value
