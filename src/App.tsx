@@ -160,7 +160,7 @@ const CountdownTimer = () => {
 };
 
 const PaymentRiver = () => {
-  const logos = ['/maybank.jpg', '/cimb.png', '/publicbank.png', '/duitnow.png', '/fpx.jpg'];
+  const logos = ['/cimb.png', '/publicbank.png', '/maybank.jpg', '/fpx.jpg', '/duitnow.png', '/bitcoin.png', '/tether.png'];
   const loop = [...logos, ...logos];
 
   return (
@@ -440,7 +440,7 @@ export default function App() {
               <h1 className="text-2xl md:text-4xl font-black text-white mb-4 leading-tight tracking-tight">
                 Deposit 7 Days. Unlock <br className="hidden sm:block" />
                 <span className="gold-gradient-text italic relative inline-block">
-                  Up to RM588
+                  Up to $588
                   <motion.div
                     className="absolute -inset-2 bg-raya-gold/8 blur-xl -z-10 rounded-full"
                     animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.08, 1] }}
@@ -729,64 +729,81 @@ SUPPORTED PAYMENT METHODS
         </div>
       </Section>
 
-      {/* 5. FINAL CTA */}
-      <Section id="final" className="text-center pb-24 md:pb-28">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: '-50px' }}
-          className="glass-panel p-8 md:p-12 border-raya-gold/20 bg-gradient-to-b from-white/[0.06] to-transparent relative overflow-hidden backdrop-blur-xl"
-        >
-          <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-raya-gold to-transparent" />
+  {/* Single CTA Welcome Reward Box */}
+<section className="relative py-16 md:py-20">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative overflow-hidden rounded-[32px] border border-raya-gold/20 bg-gradient-to-br from-[#1f5f1f]/90 via-[#145214]/90 to-[#0d3b0d]/95 shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-6 md:p-10">
+      
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_45%)]" />
+      
+      <div className="relative z-10 text-center">
+        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
+          Welcome <span className="text-raya-gold">Reward</span>
+        </h2>
 
-       <div className="relative z-10 flex flex-col items-center gap-5 pt-2">
- <img
-  src="/i882.png"
-  alt="i88 Logo"
-  className="w-24 md:w-32 mb-2 opacity-100 brightness-110 drop-shadow-[0_0_22px_rgba(255,255,255,0.28)]"
-/>
+        <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
+          Choose your tier and activate your reward instantly after deposit.
+        </p>
 
-  <h2 className="text-2xl md:text-4xl font-black mb-2 gold-gradient-text uppercase tracking-tight text-center">
-    Still Not Decide yet?
-    Try it out with RM50 first
-    & gets 88 Tokens!
-  </h2>
+        <div className="mt-8 space-y-4">
+          <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 md:px-6 md:py-5">
+            <div className="text-left">
+              <p className="text-xl md:text-2xl font-black text-white">
+                Deposit $50
+              </p>
+              <p className="text-sm md:text-base text-white/60">
+                Starter reward
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-3xl md:text-4xl font-black text-raya-gold leading-none">
+                88
+              </p>
+              <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.18em] text-white/55">
+                FREE TOKENS
+              </p>
+            </div>
+          </div>
 
-  <motion.a
-    href={DEPOSIT_URL}
-    data-event="cta_final"
-    animate={{
-      boxShadow: [
-        '0 0 0 0px rgba(212, 175, 55, 0)',
-        '0 0 0 15px rgba(212, 175, 55, 0.22)',
-        '0 0 0 30px rgba(212, 175, 55, 0)',
-      ],
-    }}
-    transition={{
-      duration: 2,
-      repeat: Infinity,
-      ease: 'easeInOut',
-    }}
-    className="group relative bg-raya-gold text-raya-blue text-lg font-black px-8 py-4 rounded-xl overflow-hidden shadow-2xl hover:scale-105 active:scale-95 transition-transform glow-shadow"
-  >
-    <span className="relative z-10 flex items-center gap-2">
-      Try Now
-      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-    </span>
-
-    <motion.div
-      className="absolute inset-0 bg-white/20"
-      animate={{ x: ['-100%', '100%'] }}
-      transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
-    />
-  </motion.a>
-</div>
-        </motion.div>
-
-        <div className="mt-8 text-[9px] text-white/20 uppercase tracking-[0.4em]">
-          &copy; 2026 Raya Perfect Week. All Rights Reserved.
+          <div className="flex items-center justify-between rounded-2xl border border-raya-gold/25 bg-raya-gold/[0.08] px-5 py-4 md:px-6 md:py-5 shadow-[0_0_30px_rgba(212,175,55,0.08)]">
+            <div className="text-left">
+              <div className="mb-2 flex flex-wrap gap-2">
+                <span className="rounded-full border border-raya-gold/30 bg-raya-gold/10 px-3 py-1 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-raya-gold">
+                  Best Value
+                </span>
+                <span className="rounded-full border border-raya-gold/30 bg-raya-gold/10 px-3 py-1 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-raya-gold">
+                  Most Chosen
+                </span>
+              </div>
+              <p className="text-xl md:text-2xl font-black text-white">
+                Deposit $100
+              </p>
+              <p className="text-sm md:text-base text-white/60">
+                Higher reward value
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-3xl md:text-4xl font-black text-raya-gold leading-none">
+                188
+              </p>
+              <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.18em] text-white/55">
+                FREE TOKENS
+              </p>
+            </div>
+          </div>
         </div>
-      </Section>
+
+        <button className="mt-8 w-full md:w-auto min-w-[280px] rounded-2xl bg-raya-gold text-[#0B1120] hover:brightness-110 px-8 py-4 text-base md:text-lg font-black transition shadow-[0_12px_35px_rgba(212,175,55,0.28)]">
+          Claim Your Welcome Bonus
+        </button>
+
+        <p className="mt-5 text-sm md:text-base text-white/55">
+          Valid for new members only. Terms & conditions apply.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Sticky CTA */}
       <motion.div
@@ -803,7 +820,7 @@ SUPPORTED PAYMENT METHODS
                   Raya Perfect Week
                 </p>
                 <p className="text-sm md:text-base font-black text-white leading-tight truncate">
-                  Start Now
+                  Start Soon
                 </p>
               </div>
 
