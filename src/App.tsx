@@ -515,7 +515,7 @@ SUPPORTED PAYMENT METHODS
             Your Reward Journey
           </h2>
           <p className="text-white/70 text-base font-medium">
-            Complete the streak to unlock maximum rewards.
+            Complete the streak to unlock maximum rewards
           </p>
         </div>
 
@@ -627,17 +627,17 @@ SUPPORTED PAYMENT METHODS
             <ul className="space-y-4 text-sm md:text-[15px] text-white/85">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
-                <span>Deposit daily for 7 days to unlock Grand Credit.</span>
+                <span>Deposit daily for 7 days to unlock Grand Credit</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <AlertCircle className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
-                <span>8x turnover applies to all bonuses.</span>
+                <span>8x turnover applies to all bonuses</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
-                <span>Free Credit credited on 26 March.</span>
+                <span>Free Credit credited on 26 March</span>
               </li>
             </ul>
           </div>
@@ -650,7 +650,7 @@ SUPPORTED PAYMENT METHODS
           <h2 className="text-2xl md:text-3xl font-black gold-gradient-text uppercase tracking-tight mb-2">
             How to Participate
           </h2>
-          <p className="text-white/60 text-sm">Follow these simple steps to claim your rewards.</p>
+          <p className="text-white/60 text-sm">Follow these simple steps to claim your rewards</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto relative">
@@ -742,7 +742,7 @@ SUPPORTED PAYMENT METHODS
         </h2>
 
         <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
-          Choose your tier and activate your reward instantly after deposit.
+          Choose & activate your reward instantly after deposit
         </p>
 
         <div className="mt-8 space-y-4">
@@ -798,7 +798,7 @@ SUPPORTED PAYMENT METHODS
         </button>
 
         <p className="mt-5 text-sm md:text-base text-white/55">
-          Valid for new members only. Terms & conditions apply.
+          Valid for new members only. Terms & conditions apply
         </p>
       </div>
     </div>
