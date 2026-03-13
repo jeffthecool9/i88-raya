@@ -738,11 +738,11 @@ SUPPORTED PAYMENT METHODS
       
       <div className="relative z-10 text-center">
         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
-          Welcome <span className="text-raya-gold">Reward</span>
+          Raya <span className="text-raya-gold">Rewards</span>
         </h2>
 
         <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
-          Choose your tier and activate your reward instantly after deposit
+          Deposit daily to secure your Grand Credit!
         </p>
 
         <div className="mt-8 space-y-4">
