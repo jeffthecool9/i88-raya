@@ -751,9 +751,7 @@ SUPPORTED PAYMENT METHODS
               <p className="text-xl md:text-2xl font-black text-white">
                 Deposit RM100
               </p>
-              <p className="text-sm md:text-base text-white/60">
-                Starter reward
-              </p>
+              
             </div>
               <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.18em] text-white/55">
                 10-20% & 50 TOKENS
@@ -762,7 +760,7 @@ SUPPORTED PAYMENT METHODS
         </div>
 
         <button className="mt-8 w-full md:w-auto min-w-[280px] rounded-2xl bg-raya-gold text-[#0B1120] hover:brightness-110 px-8 py-4 text-base md:text-lg font-black transition shadow-[0_12px_35px_rgba(212,175,55,0.28)]">
-          Claim Your Welcome Bonus
+          Claim Your Raya Bonus
         </button>
 
         <p className="mt-5 text-sm md:text-base text-white/55">
