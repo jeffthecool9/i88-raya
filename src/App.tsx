@@ -14,13 +14,13 @@ const EVENT_END_DATE = new Date('2026-03-25T23:59:59');
 const DEPOSIT_URL = 'https://example.com/deposit';
 
 const DAILY_REWARDS = [
-  { day: 1, date: '19 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true },
-  { day: 2, date: '20 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true },
-  { day: 3, date: '21 Mar', bonus: '20% Bonus', tokens: '50 Tokens', spins: '', highlight: true },
-  { day: 4, date: '22 Mar', bonus: '20% Bonus', tokens: '50 Tokens', spins: '', highlight: true },
-  { day: 5, date: '23 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true },
-  { day: 6, date: '24 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true },
-  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', tokens: '', spins: '10% Bonus & 50 Tokens', highlight: true },
+  { day: 1, date: '19 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true, rayaSpecial: false },
+  { day: 2, date: '20 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true, rayaSpecial: false },
+  { day: 3, date: '21 Mar', bonus: '20% Bonus', tokens: '50 Tokens', spins: '', highlight: true, rayaSpecial: true },
+  { day: 4, date: '22 Mar', bonus: '20% Bonus', tokens: '50 Tokens', spins: '', highlight: true, rayaSpecial: true },
+  { day: 5, date: '23 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true, rayaSpecial: false },
+  { day: 6, date: '24 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true, rayaSpecial: false },
+  { day: 7, date: '25 Mar', bonus: 'Get up to RM588', tokens: '', spins: '10% Bonus & 50 Tokens', highlight: true, rayaSpecial: false },
 ];
 
 // --- Components ---
@@ -125,6 +125,7 @@ const CountdownTimer = () => {
 
       if (difference <= 0) {
         clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       } else {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -160,7 +161,7 @@ const CountdownTimer = () => {
 };
 
 const PaymentRiver = () => {
-  const logos = ['/cimb.png', '/publicbank.png', '/maybank.jpg', '/fpx.jpg', '/duitnow.png', '/bitcoin.png', '/tether.png'];
+  const logos = ['/maybank.jpg', '/fpx.jpg', '/duitnow.png', '/cimb.png', '/publicbank.png', '/bitcoin.png', '/tether.png'];
   const loop = [...logos, ...logos];
 
   return (
@@ -224,31 +225,33 @@ export default function App() {
         />
 
         <div className="absolute inset-0 bg-black/10" />
-<motion.img
-  src="/KETUPAT.png"
-  alt=""
-  style={{ y: yHanging, willChange: 'transform' }}
-  className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.55]"
-  initial={{ y: -220, opacity: 0 }}
-  animate={{
-    y: 0,
-    opacity: 0.5,
-    rotate: [0, 0.5, -0.5, 0],
-  }}
-  transition={{
-    y: { duration: 2.2, type: 'spring', bounce: 0.2 },
-    rotate: { duration: 14, repeat: Infinity, ease: 'easeInOut' },
-    opacity: { duration: 1.4 },
-  }}
-  referrerPolicy="no-referrer"
-/>
 
-<img
-  src="/KETUPAT.png"
-  alt="Ketupat"
-  className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-90 brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.2)]"
-  referrerPolicy="no-referrer"
-/>  
+        <motion.img
+          src="/KETUPAT.png"
+          alt=""
+          style={{ y: yHanging, willChange: 'transform' }}
+          className="absolute top-0 right-0 w-56 md:w-[420px] z-20 origin-top opacity-[0.55]"
+          initial={{ y: -220, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 0.5,
+            rotate: [0, 0.5, -0.5, 0],
+          }}
+          transition={{
+            y: { duration: 2.2, type: 'spring', bounce: 0.2 },
+            rotate: { duration: 14, repeat: Infinity, ease: 'easeInOut' },
+            opacity: { duration: 1.4 },
+          }}
+          referrerPolicy="no-referrer"
+        />
+
+        <img
+          src="/KETUPAT.png"
+          alt="Ketupat"
+          className="absolute top-[15%] left-[5%] w-20 md:w-28 z-10 opacity-90 brightness-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.2)]"
+          referrerPolicy="no-referrer"
+        />
+
         <motion.img
           src="/rayaweek.png"
           alt=""
@@ -263,21 +266,21 @@ export default function App() {
         />
 
         <motion.img
-  src="/KETUPAT.png"
-  alt=""
-  className="absolute bottom-[6%] left-1/2 -translate-x-1/2 w-28 md:w-40 z-10 opacity-[0.14] blur-[1px] pointer-events-none"
-  animate={{
-    y: [0, -8, 0],
-    rotate: [0, 1.5, -1.5, 0],
-    scale: [1, 1.02, 1],
-  }}
-  transition={{
-    duration: 10,
-    repeat: Infinity,
-    ease: 'easeInOut',
-  }}
-  referrerPolicy="no-referrer"
-/>
+          src="/KETUPAT.png"
+          alt=""
+          className="absolute bottom-[6%] left-1/2 -translate-x-1/2 w-28 md:w-40 z-10 opacity-[0.14] blur-[1px] pointer-events-none"
+          animate={{
+            y: [0, -8, 0],
+            rotate: [0, 1.5, -1.5, 0],
+            scale: [1, 1.02, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          referrerPolicy="no-referrer"
+        />
 
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <Sparkle x="10%" y="20%" delay={0.5} size={2} />
@@ -309,117 +312,113 @@ export default function App() {
           transition={{ duration: 1 }}
           className="relative z-10 flex flex-col items-center"
         >
-    <div className="relative mb-8 md:mb-12 flex flex-col items-center overflow-visible">
-  <motion.img
-    src="/i882.png"
-    alt="i88 Logo"
-    className="w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] mb-6 md:mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]"
-    initial={{ y: -10, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{
-      duration: 0.8,
-      delay: 0.2,
-      ease: 'easeOut',
-    }}
-    referrerPolicy="no-referrer"
-  />
+          <div className="relative mb-8 md:mb-12 flex flex-col items-center overflow-visible">
+            <motion.img
+              src="/i882.png"
+              alt="i88 Logo"
+              className="w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] mb-6 md:mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]"
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: 'easeOut',
+              }}
+              referrerPolicy="no-referrer"
+            />
 
-  <div className="relative w-full flex justify-center overflow-visible">
-    {/* outer green aura layer 1 */}
-    <motion.img
-      src="/rayaweek.png"
-      alt=""
-      aria-hidden="true"
-      className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none opacity-0"
-      style={{
-        filter:
-          'brightness(1.35) saturate(1.35) drop-shadow(0 0 10px rgba(110,255,140,0.55)) drop-shadow(0 0 22px rgba(90,255,120,0.45)) drop-shadow(0 0 42px rgba(80,255,120,0.35)) blur(1.5px)',
-      }}
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: [0.42, 0.72, 0.5, 0.42],
-        scale: [1.01, 1.025, 1.015, 1.01],
-        x: [0, 1.5, -1, 0],
-        y: [0, -1.5, 1, 0],
-      }}
-      transition={{
-        duration: 4.5,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-      referrerPolicy="no-referrer"
-    />
+            <div className="relative w-full flex justify-center overflow-visible">
+              <motion.img
+                src="/rayaweek.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none opacity-0"
+                style={{
+                  filter:
+                    'brightness(1.35) saturate(1.35) drop-shadow(0 0 10px rgba(110,255,140,0.55)) drop-shadow(0 0 22px rgba(90,255,120,0.45)) drop-shadow(0 0 42px rgba(80,255,120,0.35)) blur(1.5px)',
+                }}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: [0.42, 0.72, 0.5, 0.42],
+                  scale: [1.01, 1.025, 1.015, 1.01],
+                  x: [0, 1.5, -1, 0],
+                  y: [0, -1.5, 1, 0],
+                }}
+                transition={{
+                  duration: 4.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+                referrerPolicy="no-referrer"
+              />
 
-    {/* outer green aura layer 2 */}
-    <motion.img
-      src="/rayaweek.png"
-      alt=""
-      aria-hidden="true"
-      className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none opacity-0"
-      style={{
-        filter:
-          'brightness(1.5) saturate(1.4) drop-shadow(0 0 14px rgba(170,255,190,0.45)) drop-shadow(0 0 30px rgba(80,255,120,0.32)) blur(3px)',
-      }}
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: [0.2, 0.4, 0.24, 0.2],
-        scale: [1.03, 1.05, 1.035, 1.03],
-        x: [0, -2, 1, 0],
-        y: [0, 1, -2, 0],
-      }}
-      transition={{
-        duration: 5.8,
-        repeat: Infinity,
-        ease: 'easeInOut',
-        delay: 0.6,
-      }}
-      referrerPolicy="no-referrer"
-    />
+              <motion.img
+                src="/rayaweek.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none opacity-0"
+                style={{
+                  filter:
+                    'brightness(1.5) saturate(1.4) drop-shadow(0 0 14px rgba(170,255,190,0.45)) drop-shadow(0 0 30px rgba(80,255,120,0.32)) blur(3px)',
+                }}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: [0.2, 0.4, 0.24, 0.2],
+                  scale: [1.03, 1.05, 1.035, 1.03],
+                  x: [0, -2, 1, 0],
+                  y: [0, 1, -2, 0],
+                }}
+                transition={{
+                  duration: 5.8,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: 0.6,
+                }}
+                referrerPolicy="no-referrer"
+              />
 
-    {/* subtle shimmer aura */}
-    <motion.img
-      src="/rayaweek.png"
-      alt=""
-      aria-hidden="true"
-      className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none"
-      style={{
-        filter:
-          'brightness(1.6) saturate(1.2) drop-shadow(0 0 8px rgba(220,255,220,0.35)) blur(0.8px)',
-      }}
-      animate={{
-        opacity: [0.12, 0.24, 0.14, 0.12],
-      }}
-      transition={{
-        duration: 2.8,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-      referrerPolicy="no-referrer"
-    />
+              <motion.img
+                src="/rayaweek.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute z-0 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto pointer-events-none select-none"
+                style={{
+                  filter:
+                    'brightness(1.6) saturate(1.2) drop-shadow(0 0 8px rgba(220,255,220,0.35)) blur(0.8px)',
+                }}
+                animate={{
+                  opacity: [0.12, 0.24, 0.14, 0.12],
+                }}
+                transition={{
+                  duration: 2.8,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+                referrerPolicy="no-referrer"
+              />
 
-    {/* real image */}
-    <motion.img
-      src="/rayaweek.png"
-      alt="Raya Perfect Week"
-      className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto"
-      style={{ willChange: 'transform, opacity, filter' }}
-      initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
-      animate={{
-        scale: 1,
-        opacity: 1,
-        filter:
-          'drop-shadow(0 0 8px rgba(212,175,55,0.18)) drop-shadow(0 0 18px rgba(80,255,120,0.10))',
-      }}
-      transition={{
-        duration: 1,
-        delay: 0.4,
-        type: 'spring',
-        stiffness: 100,
-      }}
-      referrerPolicy="no-referrer"
-    />
-  </div>
-</div>
+              <motion.img
+                src="/rayaweek.png"
+                alt="Raya Perfect Week"
+                className="relative z-10 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[550px] h-auto"
+                style={{ willChange: 'transform, opacity, filter' }}
+                initial={{ scale: 0.9, opacity: 0, filter: 'blur(8px)' }}
+                animate={{
+                  scale: 1,
+                  opacity: 1,
+                  filter:
+                    'drop-shadow(0 0 8px rgba(212,175,55,0.18)) drop-shadow(0 0 18px rgba(80,255,120,0.10))',
+                }}
+                transition={{
+                  duration: 1,
+                  delay: 0.4,
+                  type: 'spring',
+                  stiffness: 100,
+                }}
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
 
           <div className="glass-panel z-20 p-6 sm:p-8 md:p-12 border border-white/10 bg-[rgba(15,50,15,0.72)] backdrop-blur-[22px] max-w-3xl mx-auto rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/12 to-black/22" />
@@ -433,8 +432,7 @@ export default function App() {
                 transition={{ delay: 0.8 }}
                 className="mb-4 flex items-center gap-2 text-raya-gold font-bold text-xs uppercase tracking-[0.3em]"
               >
-                <Moon className="w-3 h-3 fill-raya-gold" /> Limited Time Event{' '}
-                <Moon className="w-3 h-3 fill-raya-gold" />
+                <Moon className="w-3 h-3 fill-raya-gold" /> Limited Time Event <Moon className="w-3 h-3 fill-raya-gold" />
               </motion.div>
 
               <h1 className="text-2xl md:text-4xl font-black text-white mb-4 leading-tight tracking-tight">
@@ -482,33 +480,30 @@ export default function App() {
 
       {/* Payment Method River */}
       <Section id="payment-river" className="pt-0 md:pt-2 pb-6 md:pb-10">
-      <div className="text-center mb-6">
-
-<span
-className="
-inline-flex items-center
-rounded-full
-border border-white/25
-bg-white/10
-backdrop-blur-md
-px-6 py-2
-text-[11px] md:text-[13px]
-font-black
-uppercase
-tracking-[0.35em]
-text-white/85
-">
-
-SUPPORTED PAYMENT METHODS
-
-</span>
-
-</div>
+        <div className="text-center mb-6">
+          <span
+            className="
+              inline-flex items-center
+              rounded-full
+              border border-white/25
+              bg-white/10
+              backdrop-blur-md
+              px-6 py-2
+              text-[11px] md:text-[13px]
+              font-black
+              uppercase
+              tracking-[0.35em]
+              text-white/85
+            "
+          >
+            SUPPORTED PAYMENT METHODS
+          </span>
+        </div>
 
         <PaymentRiver />
       </Section>
 
-          {/* 2. REWARDS CALENDAR */}
+      {/* 2. REWARDS CALENDAR */}
       <Section id="rewards" className="relative z-10 bg-gradient-to-b from-transparent to-raya-emerald/10">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-black mb-3 gold-gradient-text uppercase tracking-tight">
@@ -533,19 +528,35 @@ SUPPORTED PAYMENT METHODS
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-center group md:flex-1"
                 >
+                  {/* Day badge */}
                   <div className="mb-4 md:mb-5">
-                    <span className="inline-flex items-center rounded-full border border-raya-gold/25 bg-[rgba(212,175,55,0.08)] px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-[13px] font-black uppercase tracking-[0.22em] text-raya-gold shadow-[0_0_18px_rgba(212,175,55,0.08)] backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-raya-gold/40 group-hover:bg-[rgba(212,175,55,0.12)]">
+                    <span
+                      className={`inline-flex items-center rounded-full px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-[13px] font-black uppercase tracking-[0.22em] backdrop-blur-md transition-all duration-300 group-hover:scale-105 ${
+                        reward.rayaSpecial
+                          ? 'border border-yellow-200/60 bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 text-[#4a3400] shadow-[0_0_20px_rgba(250,204,21,0.35)]'
+                          : 'border border-raya-gold/25 bg-[rgba(212,175,55,0.08)] text-raya-gold shadow-[0_0_18px_rgba(212,175,55,0.08)] group-hover:border-raya-gold/40 group-hover:bg-[rgba(212,175,55,0.12)]'
+                      }`}
+                    >
                       Day {reward.day}
                     </span>
                   </div>
 
+                  {/* Icon area */}
                   <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+                    {reward.rayaSpecial && (
+                      <div className="absolute inset-[-16px] rounded-full bg-[radial-gradient(circle,rgba(250,204,21,0.30),rgba(250,204,21,0.08),transparent_68%)] blur-[16px] -z-10" />
+                    )}
+
                     <motion.img
                       src="/KETUPAT-2.png"
                       alt="Ketupat"
                       animate={reward.highlight ? { scale: [1, 1.05, 1] } : {}}
                       transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                      className="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.6)] brightness-110"
+                      className={`w-full h-full object-contain brightness-110 ${
+                        reward.rayaSpecial
+                          ? 'drop-shadow-[0_0_26px_rgba(250,204,21,0.85)] saturate-[1.15]'
+                          : 'drop-shadow-[0_0_20px_rgba(212,175,55,0.6)]'
+                      }`}
                       referrerPolicy="no-referrer"
                     />
 
@@ -559,7 +570,7 @@ SUPPORTED PAYMENT METHODS
                       </motion.div>
                     )}
 
-                    {reward.highlight && (
+                    {reward.highlight && !reward.rayaSpecial && (
                       <>
                         <motion.div
                           animate={{
@@ -580,30 +591,79 @@ SUPPORTED PAYMENT METHODS
                         />
                       </>
                     )}
+
+                    {reward.highlight && reward.rayaSpecial && (
+                      <>
+                        <motion.div
+                          animate={{
+                            scale: [1, 1.28, 1],
+                            opacity: [0.28, 0.58, 0.28],
+                          }}
+                          transition={{
+                            duration: 2.6,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                          }}
+                          className="absolute inset-0 rounded-full bg-yellow-300/40 -z-10 blur-[40px]"
+                        />
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 6.5, repeat: Infinity, ease: 'linear' }}
+                          className="absolute inset-[-10px] rounded-full border border-dashed border-yellow-200/45 -z-10"
+                        />
+                      </>
+                    )}
                   </div>
 
+                  {/* Text area */}
                   <div className="mt-5 md:mt-7 text-center space-y-1">
-                    <span className="block text-xs md:text-sm font-bold text-raya-gold tracking-wide">
+                    <span
+                      className={`block text-xs md:text-sm font-bold tracking-wide ${
+                        reward.rayaSpecial ? 'text-yellow-200' : 'text-raya-gold'
+                      }`}
+                    >
                       {reward.date}
                     </span>
+
+                    {reward.rayaSpecial && (
+                      <div className="flex justify-center">
+                        <span className="inline-flex items-center rounded-full px-2.5 py-1 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] bg-gradient-to-r from-yellow-300 to-amber-400 text-[#4a3400] shadow-[0_0_12px_rgba(250,204,21,0.25)]">
+                          Raya Day
+                        </span>
+                      </div>
+                    )}
 
                     <div className="flex flex-col items-center leading-tight">
                       <span
                         className={`text-sm md:text-lg font-black uppercase ${
-                          reward.highlight ? 'text-white' : 'text-white/80'
+                          reward.rayaSpecial
+                            ? 'bg-gradient-to-b from-[#fff7cc] via-[#ffe066] to-[#facc15] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(250,204,21,0.18)]'
+                            : reward.highlight
+                            ? 'text-white'
+                            : 'text-white/80'
                         }`}
                       >
                         {reward.bonus}
                       </span>
 
                       {reward.tokens && (
-                        <span className="text-sm md:text-lg font-black uppercase text-white">
+                        <span
+                          className={`text-sm md:text-lg font-black uppercase ${
+                            reward.rayaSpecial
+                              ? 'bg-gradient-to-b from-[#fff7cc] via-[#ffe066] to-[#facc15] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(250,204,21,0.18)]'
+                              : 'text-white'
+                          }`}
+                        >
                           {reward.tokens}
                         </span>
                       )}
 
                       {reward.spins && (
-                        <span className="text-[10px] md:text-xs text-white/60 font-semibold uppercase tracking-wider">
+                        <span
+                          className={`text-[10px] md:text-xs font-semibold uppercase tracking-wider ${
+                            reward.rayaSpecial ? 'text-yellow-100/80' : 'text-white/60'
+                          }`}
+                        >
                           {reward.spins}
                         </span>
                       )}
@@ -729,47 +789,45 @@ SUPPORTED PAYMENT METHODS
         </div>
       </Section>
 
- {/* Single CTA Welcome Reward Box */}
-<section className="relative py-16 md:py-20">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="relative overflow-hidden rounded-[32px] border border-raya-gold/20 bg-gradient-to-br from-[#1f5f1f]/90 via-[#145214]/90 to-[#0d3b0d]/95 shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-6 md:p-10">
-      
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_45%)]" />
-      
-      <div className="relative z-10 text-center">
-        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
-          Raya <span className="text-raya-gold">Rewards</span>
-        </h2>
+      {/* Single CTA Welcome Reward Box */}
+      <section className="relative py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[32px] border border-raya-gold/20 bg-gradient-to-br from-[#1f5f1f]/90 via-[#145214]/90 to-[#0d3b0d]/95 shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-6 md:p-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_45%)]" />
 
-        <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
-          Deposit Daily to secure your Grand Credit!
-        </p>
+            <div className="relative z-10 text-center">
+              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
+                Raya <span className="text-raya-gold">Bonus</span>
+              </h2>
 
-        <div className="mt-8 space-y-4">
-          <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 md:px-6 md:py-5">
-            <div className="text-left">
-              <p className="text-xl md:text-2xl font-black text-white">
-                Deposit RM100
+              <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
+                Deposit Daily to secure your Grand Credit!
               </p>
-              
-            </div>
-              <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.18em] text-white/55">
-                10-20% & 50 TOKENS
+
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 md:px-6 md:py-5">
+                  <div className="text-left">
+                    <p className="text-xl md:text-2xl font-black text-white">
+                      Deposit RM100
+                    </p>
+                  </div>
+                  <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.18em] text-white/55">
+                    10-20% & 50 TOKENS
+                  </p>
+                </div>
+              </div>
+
+              <button className="mt-8 w-full md:w-auto min-w-[280px] rounded-2xl bg-raya-gold text-[#0B1120] hover:brightness-110 px-8 py-4 text-base md:text-lg font-black transition shadow-[0_12px_35px_rgba(212,175,55,0.28)]">
+                Claim Your Raya Bonus
+              </button>
+
+              <p className="mt-5 text-sm md:text-base text-white/55">
+                Terms & conditions apply
               </p>
             </div>
+          </div>
         </div>
-
-        <button className="mt-8 w-full md:w-auto min-w-[280px] rounded-2xl bg-raya-gold text-[#0B1120] hover:brightness-110 px-8 py-4 text-base md:text-lg font-black transition shadow-[0_12px_35px_rgba(212,175,55,0.28)]">
-          Claim Your Raya Bonus
-        </button>
-
-        <p className="mt-5 text-sm md:text-base text-white/55">
-         Terms & conditions apply
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Sticky CTA */}
       <motion.div
