@@ -742,7 +742,7 @@ SUPPORTED PAYMENT METHODS
         </h2>
 
         <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
-          Deposit daily to secure your Grand Credit!
+          Deposit Daily to secure your Grand Credit!
         </p>
 
         <div className="mt-8 space-y-4">
