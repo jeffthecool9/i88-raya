@@ -11,7 +11,7 @@ import {
 
 // --- Constants ---
 const EVENT_END_DATE = new Date('2026-03-25T23:59:59');
-const DEPOSIT_URL = 'https://example.com/deposit';
+const DEPOSIT_URL = 'https://www.palacehub8.com/hGn04apx';
 
 const DAILY_REWARDS = [
   { day: 1, date: '19 Mar', bonus: '10% Bonus', tokens: '50 Tokens', spins: '', highlight: true, rayaSpecial: false },
