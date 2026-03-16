@@ -818,7 +818,7 @@ export default function App() {
               </div>
 
               <button className="mt-8 w-full md:w-auto min-w-[280px] rounded-2xl bg-raya-gold text-[#0B1120] hover:brightness-110 px-8 py-4 text-base md:text-lg font-black transition shadow-[0_12px_35px_rgba(212,175,55,0.28)]">
-                Claim Your Raya Bonus
+                Register & Stay Tuned
               </button>
 
               <p className="mt-5 text-sm md:text-base text-white/55">
@@ -855,7 +855,7 @@ export default function App() {
                 whileTap={{ scale: 0.96 }}
                 className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-raya-gold text-raya-blue font-black text-sm md:text-base px-4 py-3 shadow-lg"
               >
-                Pre-Register
+               Register
                 <ChevronRight className="w-4 h-4" />
               </motion.a>
             </div>
