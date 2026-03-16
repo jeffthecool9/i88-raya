@@ -789,45 +789,55 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Single CTA Welcome Reward Box */}
-      <section className="relative py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[32px] border border-raya-gold/20 bg-gradient-to-br from-[#1f5f1f]/90 via-[#145214]/90 to-[#0d3b0d]/95 shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-6 md:p-10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_45%)]" />
+      {/* Raya Bonus Info Box */}
+<section className="relative py-16 md:py-20">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative overflow-hidden rounded-[32px] border border-raya-gold/20 bg-gradient-to-br from-[#1f5f1f]/90 via-[#145214]/90 to-[#0d3b0d]/95 shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-6 md:p-10">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_45%)]" />
 
-            <div className="relative z-10 text-center">
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
-                Raya <span className="text-raya-gold">Bonus</span>
-              </h2>
+      <div className="relative z-10 text-center">
+        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
+          Raya <span className="text-raya-gold">Bonus</span>
+        </h2>
 
-              <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
-                Deposit Daily to secure your Grand Credit!
-              </p>
+        <p className="mt-4 text-base md:text-lg text-white/75 max-w-2xl mx-auto">
+          Daily deposit rewards for the Raya Perfect Week event
+        </p>
 
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 md:px-6 md:py-5">
-                  <div className="text-left">
-                    <p className="text-xl md:text-2xl font-black text-white">
-                      Deposit RM100
-                    </p>
-                  </div>
-                  <p className="mt-1 text-xs md:text-sm uppercase tracking-[0.18em] text-white/55">
-                    10-20% & 50 TOKENS
-                  </p>
-                </div>
-              </div>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-left">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-white/45 font-black">
+              Minimum Daily Deposit
+            </p>
+            <p className="mt-2 text-xl md:text-2xl font-black text-white">
+              RM100
+            </p>
+          </div>
 
-              <button className="mt-8 w-full md:w-auto min-w-[280px] rounded-2xl bg-raya-gold text-[#0B1120] hover:brightness-110 px-8 py-4 text-base md:text-lg font-black transition shadow-[0_12px_35px_rgba(212,175,55,0.28)]">
-                Register & Stay Tuned
-              </button>
-
-              <p className="mt-5 text-sm md:text-base text-white/55">
-                Terms & conditions apply
-              </p>
-            </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-left">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-white/45 font-black">
+              Reward Range
+            </p>
+            <p className="mt-2 text-xl md:text-2xl font-black text-raya-gold">
+              10–20% + 50 Tokens
+            </p>
           </div>
         </div>
-      </section>
+
+        <div className="mt-8 flex justify-center">
+          <div className="inline-flex items-center gap-3 rounded-2xl border border-raya-gold/20 bg-white/[0.04] px-5 py-3 text-sm md:text-base text-white/75 backdrop-blur-md">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-raya-gold shadow-[0_0_10px_rgba(212,175,55,0.45)]" />
+            Event registration opens soon
+          </div>
+        </div>
+
+        <p className="mt-5 text-sm md:text-base text-white/55">
+          Terms & conditions apply
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Sticky CTA */}
       <motion.div
