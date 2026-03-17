@@ -25,7 +25,7 @@ const getCookie = (name: string) => {
 
 const handleRegisterClick = async () => {
   const eventId = `lead_${Date.now()}`;
-  const targetUrl = "https://www.palacehub8.com/jv4Ajnn8";
+  const targetUrl = "https://www.palacehub8.com/hGn04apx";
 
   try {
     // Browser event
