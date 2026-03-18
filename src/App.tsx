@@ -896,7 +896,7 @@ export default function App() {
                   Raya Perfect Week
                 </p>
                 <p className="text-sm md:text-base font-black text-white leading-tight truncate">
-                  Start Soon
+                  Start NOW
                 </p>
               </div>
 
