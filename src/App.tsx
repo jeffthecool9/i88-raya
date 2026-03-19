@@ -852,12 +852,17 @@ export default function App() {
           </div>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <div className="inline-flex items-center gap-3 rounded-2xl border border-raya-gold/20 bg-white/[0.04] px-5 py-3 text-sm md:text-base text-white/75 backdrop-blur-md">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-raya-gold shadow-[0_0_10px_rgba(212,175,55,0.45)]" />
-            Event registration opens NOW
-          </div>
-        </div>
+     <div className="mt-8 flex justify-center">
+  <div className="inline-flex items-center gap-3 rounded-2xl border border-green-400/30 bg-[rgba(20,83,45,0.5)] px-5 py-3 text-sm md:text-base text-white/85 backdrop-blur-md">
+
+    <span className="relative flex h-3 w-3">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500 shadow-[0_0_12px_rgba(34,197,94,0.9)]"></span>
+    </span>
+
+    Event registration is LIVE
+  </div>
+</div>
 
         <p className="mt-5 text-sm md:text-base text-white/55">
           Terms & conditions apply
