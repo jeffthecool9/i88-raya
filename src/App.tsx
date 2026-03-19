@@ -494,7 +494,7 @@ export default function App() {
                 <span className="text-white font-bold underline decoration-raya-gold underline-offset-4">
                   7 consecutive days
                 </span>{' '}
-                to unlock the ultimate <span className="text-raya-gold font-black">Raya Perfect Week</span>.
+                <span className="text-raya-gold font-black">& Don't forget to play!</span>.
               </p>
 
               <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
