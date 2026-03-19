@@ -733,11 +733,6 @@ export default function App() {
               </li>
 
               <li className="flex items-start gap-3">
-                <AlertCircle className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
-                <span>8x turnover applies to all bonuses</span>
-              </li>
-
-              <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-raya-gold shrink-0 mt-1" />
                 <span>Free Credit credited on 26 March</span>
               </li>
@@ -831,7 +826,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Raya Bonus Info Box */}
+       {/* Single CTA Welcome Reward Box */}
 <section className="relative py-16 md:py-20">
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="relative overflow-hidden rounded-[32px] border border-raya-gold/20 bg-gradient-to-br from-[#1f5f1f]/90 via-[#145214]/90 to-[#0d3b0d]/95 shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-xl p-6 md:p-10">
@@ -846,17 +841,8 @@ export default function App() {
           Daily deposit rewards for the Raya Perfect Week event
         </p>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-left">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-white/45 font-black">
-              Minimum Daily Deposit
-            </p>
-            <p className="mt-2 text-xl md:text-2xl font-black text-white">
-              RM100
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-left">
+        <div className="mt-8">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-left max-w-md mx-auto">
             <p className="text-[11px] uppercase tracking-[0.22em] text-white/45 font-black">
               Reward Range
             </p>
@@ -869,7 +855,7 @@ export default function App() {
         <div className="mt-8 flex justify-center">
           <div className="inline-flex items-center gap-3 rounded-2xl border border-raya-gold/20 bg-white/[0.04] px-5 py-3 text-sm md:text-base text-white/75 backdrop-blur-md">
             <span className="inline-block w-2.5 h-2.5 rounded-full bg-raya-gold shadow-[0_0_10px_rgba(212,175,55,0.45)]" />
-            Event registration opens soon
+            Event registration opens NOW
           </div>
         </div>
 
@@ -881,7 +867,7 @@ export default function App() {
   </div>
 </section>
 
-      {/* Sticky CTA */}
+{/* Sticky CTA */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
